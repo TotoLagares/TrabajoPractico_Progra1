@@ -7,19 +7,19 @@ alumnos={
          }
 
 profesores={ 
-        1:{"id": 0 , "nombre": "Santiago", "apellido": "Pérez", "materias": [5,6,7,8]},
-        2:{"id": 0 ,"nombre": "María", "apellido": "González", "materias": [5,6,7,8]},
-        3:{"id": 0 ,"nombre": "José", "apellido": "López", "materias": [5,6,7,8]}
+        1:{"id": 0 , "nombre": "Santiago", "apellido": "Pérez", "materias": [3,6,7,8]},
+        2:{"id": 0 ,"nombre": "María", "apellido": "González", "materias": [5]},
+        3:{"id": 0 ,"nombre": "José", "apellido": "López", "materias": [3,1,2]}
          }
 
 cursos={
-    1:{"curso_id":3, "curso_nombre":"primero A", "alumnos":0, "materias": [1,2,3,4]},
-    2:{"curso_id":6, "curso_nombre":"primero A", "alumnos":0, "materias":[5,6,7,8]}
+    1:{"curso_id":1, "curso_nombre":"primero A", "alumnos":0, "materias": []},
+    2:{"curso_id":2, "curso_nombre":"primero A", "alumnos":0, "materias":[]}
     }
 
-Materias={
-    1:{"materia_id":3, "curso_nombre":"geografia", "profesor":0, "materias": [1,2,3,4]},
-    2:{"materia":6, "curso_nombre":"historia", "profesor":0, "materias":[5,6,7,8]}
+materias={
+    1:{"materia_id":3, "curso_nombre":"geografia", "profesor":[], "curso": 1},
+    2:{"materia_id":6, "curso_nombre":"historia", "profesor":[], "curso":1}
     }
 
 def id_loop(a):
@@ -41,8 +41,32 @@ def Asignacion(alumnos, cursos):
                 cont_curso+=1
                 cursos[i]["alumnos"]=cont_curso
     return cursos
-    
+
+def asignacion_2(a,b,c:str,d:str,f:str,g:str):
+    for i in a:
+        for j in b:    
+            if a[i][c] in b[j][d]:
+                a[i][f].append(b[j][g]) 
+    return a
+
+def asignacion_3(materias, cursos):
+    for i in materias:
+        for j in cursos:
+            if materias[i]["curso"] == cursos[j]["curso_id"]:
+                cursos[j]["materias"].append(materias[i]["materia_id"])
+    return cursos
+
+
+def main():
+    opciones = ["1- Alumnos", "2- Profesores", "3- Cusos", "4- Materias", "0- Salir"]
+    for opcion in opciones:
+        print(opcion)
+
 id_loop(alumnos)
 id_loop(profesores)
 Asignacion(alumnos, cursos)
+asignacion_2(materias, profesores, "materia_id","materias","profesor","id")
+asignacion_3(materias, cursos)
 print_dict(cursos)
+print_dict(materias)
+main()
