@@ -113,7 +113,7 @@ def repetir(a):
     while True:
         asdc=str(input("Desea realizar otra acción? [S/N]: ")).lower()
         if asdc=="n":
-            main()
+            salir()
         elif asdc=="s":
             break
         else:
