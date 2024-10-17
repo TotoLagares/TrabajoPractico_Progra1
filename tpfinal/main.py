@@ -58,7 +58,7 @@ def asignacion_3(materias, cursos):
     return cursos
 
 def men_2(a):
-    opciones=[f"[1] Ingresar {a} nuevos", f"[2] Eliminar {a}", f"[3] Modificar {a}", f"[4] Ver {a}", f"[0] Salir"]
+    opciones=[f"[1] Ingresar {a} nuevos", f"[2] Eliminar {a}", f"[3] Modificar {a}", f"[4] Ver {a}", f"[0] Atras"]
     for i in opciones:
         print(i)
 
@@ -89,12 +89,12 @@ def modificar(a):
     id_modificar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a modificar: "))
     for i in a:
         if a[i]["id"] == id_modificar:
-            elegir = input(f"Ingrese el campo a modificar: {a[i]}")
+            elegir = input(f"Ingrese el campo a modificar: {a[i]} - ")
             for j in a[i]:
                 if j == elegir:
                     a[i][j] = input("Ingrese el nuevo valor: ")
                     print(a[i])
-                    break   
+                    break
     return a
 
 def buscar(a):
@@ -105,7 +105,23 @@ def buscar(a):
 
 def agregar(a:dict):
     print("no funca")
-    
+
+
+def repetir(a):
+    while True:
+        asdc=str(input("Desea realizar otra acción? [S/N]: ")).lower()
+        if asdc=="n":
+            main()
+        elif asdc=="s":
+            break
+        else:
+            print("Opción no válida")
+
+
+       
+
+
+
 
 def main():
     id_loop(alumnos)
@@ -115,78 +131,108 @@ def main():
     Asignacion(alumnos, cursos)
     asignacion_2(materias, profesores, "id","materias","profesor","id")
     asignacion_3(materias, cursos)
-    opciones = ["1- Alumnos", "2- Profesores", "3- Cursos", "4- Materias", "0- Salir"]
-    for opcion in opciones:
-        print(opcion)
-    opcion_elec = input("Ingrese una opción: ")
+    while True:
+        opciones = ["1- Alumnos", "2- Profesores", "3- Cursos", "4- Materias", "0- Salir"]
+        for opcion in opciones:
+            print(opcion)
+        opcion_elec = input("Ingrese una opción: ")
+        if opcion_elec not in ("0","1","2","3","4"):
+            print("opcion no valida, intente de nuevo")
+            continue
+        
 
-    if opcion_elec == "1":
-        while True:
-            men_2(obtener_nombre_diccionario(alumnos))
-            elec2=input("Ingrese una opción: ")
-            if elec2 == "1":
-                agregar(alumnos)
-            elif elec2 == "2":
-                eliminar(alumnos)
-            elif elec2 == "3":
-                modificar(alumnos)
-            elif elec2 == "4":
-                if input("[1] Desea ver todo los alumnos o [2] un alumno en particular: ") == "1":
-                    print_dict(alumnos)
-                else:
-                    buscar(alumnos)
-            elif elec2 == "0":
-                salir()
-            else:
-                print("Opción no válida")
+        elif opcion_elec == "1":
             while True:
-                asdc=str(input("Desea realizar otra acción? [S/N]: ")).lower()
-                if asdc=="n":
-                    break
-                elif asdc=="s":
-                    break
+                men_2(obtener_nombre_diccionario(alumnos))
+                elec2=input("Ingrese una opción: ")
+                if elec2 == "1":
+                    agregar(alumnos)
+                elif elec2 == "2":
+                    eliminar(alumnos)
+                elif elec2 == "3":
+                    modificar(alumnos)
+                elif elec2 == "4":
+                    if input("[1] Desea ver todo los alumnos o [2] un alumno en particular: ") == "1":
+                        print_dict(alumnos)
+                    else:
+                        buscar(alumnos)
+                elif elec2 == "0":
+                    main()
                 else:
                     print("Opción no válida")
-            if asdc=="n":
-                break 
-
-    elif opcion_elec == "2":
-        while True:
-            men_2(obtener_nombre_diccionario(profesores))
-            elec2=input("Ingrese una opción: ")
-            if elec2 == "1":
-                agregar(profesores)
-            elif elec2 == "2":
-                eliminar(profesores)
-            elif elec2 == "3":
-                modificar(profesores)
-            elif elec2 == "4":
-                if input("[1] Desea ver todo los profesores o [2] un profesor en particular: ") == "1":
-                    print_dict(profesores)
-                else:
-                    buscar(profesores)
-            elif elec2 == "0":
-                salir()
-            else:
-                print("Opción no válida")
+                    continue
+                repetir(alumnos)
+                
+                        
+                
+        elif opcion_elec == "2":
             while True:
-                asdc=str(input("Desea realizar otra acción? [S/N]: ")).lower()
-                if asdc=="n":
-                    break
-                elif asdc=="s":
-                    break
-                else:
-                    print("Opción no válida")
-            if asdc=="n":
-                break
-    elif opcion_elec == "3":
-        men_2(obtener_nombre_diccionario(cursos))
-    elif opcion_elec == "4":
-        men_2(obtener_nombre_diccionario(materias))
-    elif opcion_elec == "0":
-        salir()
-    else:
-        print("Opción no válida")
+                men_2(obtener_nombre_diccionario(profesores))
+                elec2=input("Ingrese una opción: ")
+                if elec2 not in ("0", "1", "2", "3", "4"):
+                    print("opcion no valida, intente de nuevo")
+                    continue
+                if elec2 == "1":
+                    agregar(profesores)
+                elif elec2 == "2":
+                    eliminar(profesores)
+                elif elec2 == "3":
+                    modificar(profesores)
+                elif elec2 == "4":
+                    if input("[1] Desea ver todo los profesores o [2] un profesor en particular: ") == "1":
+                        print_dict(profesores)
+                    else:
+                        buscar(profesores)
+                elif elec2 == "0":
+                    main()
+                repetir(profesores)
+                
+                
+        elif opcion_elec == "3":
+            while True:
+                men_2(obtener_nombre_diccionario(cursos))
+                elec2=input("Ingrese una opción: ")
+                if elec2 not in ("0", "1", "2", "3", "4"):
+                    print("opcion no valida, intente de nuevo")
+                    continue
+                elif elec2 == "1":
+                    agregar(cursos)
+                elif elec2 == "2":
+                    eliminar(cursos)
+                elif elec2 == "3":
+                    modificar(cursos)
+                elif elec2 == "4":
+                    print_dict(cursos)
+                elif elec2 == "0":
+                    main()
+                repetir(cursos)
+                
+            
+        elif opcion_elec == "4":
+            men_2(obtener_nombre_diccionario(materias))
+            elec2=input("Ingrese una opción: ")
+            if elec2 not in ("0", "1", "2", "3", "4"):
+                print("opcion no valida, intente de nuevo")
+                continue
+            elif elec2 == "1":
+                agregar(materias)
+            elif elec2 == "2":
+                eliminar(materias)
+            elif elec2 == "3":
+                modificar(materias)
+            elif elec2 == "4":
+                print_dict(materias)
+            elif elec2 == "0":
+                main()
+            repetir(materias)
+            break
+
+
+
+            
+        elif opcion_elec == "0":
+            print("Saliendo del programa...")
+            exit()
 main()
 
 ## 0. arreglar el bug de agregar
