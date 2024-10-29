@@ -5,7 +5,7 @@ from funciones import *
 def main():
     llamados_principales()
     while True:
-        opciones = ["1- Alumnos", "2- Profesores", "3- Cursos", "4- Materias", "0- Salir"]
+        opciones = ["[1] Alumnos", "[2] Profesores", "[3] Cursos", "[4] Materias", "[0] Salir"]
         for opcion in opciones:
             print(opcion)
         opcion_elec = input("Ingrese una opción: ")
@@ -107,4 +107,7 @@ def main():
             exit()
 main()
 
-## 1. Mejorar los prints con lo de la clase 4
+# Proyecto segunda parte:
+#         instancias de evaluacion de las materias
+#         notas de alumnos de la materias
+#         informes de cursadas
