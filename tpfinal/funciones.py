@@ -50,35 +50,51 @@ def salir():
     exit()
 
 def eliminar(a):
-    id_eliminar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a eliminar: "))
-    claves_a_eliminar = []
-    for i in a:
-        if a[i]["id"] == id_eliminar:
-            claves_a_eliminar.append(i)
-    if input(f"Está seguro que desea eliminar {a[claves_a_eliminar[0]]}? [S/N]: ").lower() == "s":
-        for clave in claves_a_eliminar:
-            del a[clave]
-    else:
-        print(f"No se eliminó {a[claves_a_eliminar[0]]}")
-    return a
+    while True:
+        id_eliminar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a eliminar: "))
+        if id_eliminar not in a:
+            print("id no encontrado, intente de nuevo")
+            continue
+        claves_a_eliminar = []
+        for i in a:
+            if a[i]["id"] == id_eliminar:
+                claves_a_eliminar.append(i)
+        if input(f"Está seguro que desea eliminar {a[claves_a_eliminar[0]]}? [S/N]: ").lower() == "s":
+            for clave in claves_a_eliminar:
+                del a[clave]
+        else:
+            print(f"No se eliminó {a[claves_a_eliminar[0]]}")
+        return a
 
 def modificar(a):
-    id_modificar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a modificar: "))
-    for i in a:
-        if a[i]["id"] == id_modificar:
-            elegir = input(f"Ingrese el campo a modificar: {a[i]} - ")
-            for j in a[i]:
-                if j == elegir:
-                    a[i][j] = input("Ingrese el nuevo valor: ")
-                    print(a[i])
-                    break
-    return a
+    while True:
+        id_modificar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a modificar: "))
+        if id_modificar not in a:
+            print("Id no encontrado, intente de nuevo")
+            continue
+        for i in a:
+            if a[i]["id"] == id_modificar:
+                elegir = input(f"Ingrese el campo a modificar: {a[i]} - ")
+                for j in a[i]:
+                    if j == elegir:
+                        a[i][j] = input("Ingrese el nuevo valor: ")
+                        print(a[i])
+                        break
+        return a
 
 def buscar(a):
-    id_buscar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a buscar: "))
-    for i in a:
-        if a[i]["id"] == id_buscar:
-            print(a[i])
+    while True:
+        id_buscar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a buscar: "))
+        if id_buscar not in a:
+            print("Id no encontrado, intente de nuevo")
+            continue
+        for i in a:
+            if a[i]["id"] == id_buscar:
+                print(a[i])
+                if str(input("Quiere buscar de nuevo? ")).lower() == "s":
+                    continue
+                else:
+                    return False
 
 def agregar(a:dict):
     lista_claves = []
@@ -113,11 +129,11 @@ def repetir(a):
     while True:
         asdc=str(input("Desea realizar otra acción? [S/N]: ")).lower()
         if asdc=="n":
-            main()
+            exit()
         elif asdc=="s":
             break
         else:
-            print("Opción no válida")
+            print("Opción no válida, intente de nuevo")
 
 def generar_gmail(a):
     if a == "profesores":

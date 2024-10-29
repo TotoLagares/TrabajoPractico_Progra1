@@ -93,10 +93,11 @@ def main():
             elif elec2 == "3":
                 modificar(materias)
             elif elec2 == "4":
-                if input("[1] Desea ver todo los cursos o [2] un curso en particular: ") == "1":
+                if input("[1] Desea ver todas las materias o [2] una materia en particular: ") == "1":
                     print_dict(cursos)
                 else:
                     buscar(cursos)
+                    
             elif elec2 == "0":
                 main()
             repetir(materias)
