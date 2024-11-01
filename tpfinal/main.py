@@ -1,7 +1,39 @@
 
+"""
+-----------------------------------------------------------------------------------------------
+Título: Trabajo practico, primer parcial
+Fecha: 1/11/2024
+Autor: Ignacio Bailo, Santiago Lagares, Bautista Gioseffi, Ignacio Mones Ruiz, Tobias Picardo
+
+Descripción: Programa orientado a la gestion academica nivel secundario con funcionalidades
+para agregar, eliminar, modificar y buscar entre entidades (Alumnos, Profesores, Cursos, Materias).
+Tambien relacion entre entidades y la estructura de sus datos.
+
+Pendientes:
+# Proyecto segunda parte:
+#         instancias de evaluacion de las materias
+#         notas de alumnos de la materias
+#         informes de cursadas
+#         Arreglar crud (keys)
+-----------------------------------------------------------------------------------------------
+"""
+
+#----------------------------------------------------------------------------------------------
+# MÓDULOS
+#----------------------------------------------------------------------------------------------
 from dicts import *
 from funciones import *
 
+
+#----------------------------------------------------------------------------------------------
+# FUNCIONES
+#----------------------------------------------------------------------------------------------
+...
+
+
+#----------------------------------------------------------------------------------------------
+# CUERPO PRINCIPAL
+#----------------------------------------------------------------------------------------------
 def main():
     llamados_principales()
     while True:
@@ -81,33 +113,32 @@ def main():
                 repetir(cursos)
                         
         elif opcion_elec == "4":
-            men_2(obtener_nombre_diccionario(materias))
-            elec2=input("Ingrese una opción: ")
-            if elec2 not in ("0", "1", "2", "3", "4"):
-                print("opcion no valida, intente de nuevo")
-                continue
-            elif elec2 == "1":
-                agregar(materias)
-            elif elec2 == "2":
-                eliminar(materias)
-            elif elec2 == "3":
-                modificar(materias)
-            elif elec2 == "4":
-                if input("[1] Desea ver todas las materias o [2] una materia en particular: ") == "1":
-                    print_dict(cursos)
-                else:
-                    buscar(cursos)
-                    
-            elif elec2 == "0":
-                main()
-            repetir(materias)
-            break
+            while True:
+                men_2(obtener_nombre_diccionario(materias))
+                elec2=input("Ingrese una opción: ")
+                if elec2 not in ("0", "1", "2", "3", "4"):
+                    print("opcion no valida, intente de nuevo")
+                    continue
+                elif elec2 == "1":
+                    agregar(materias)
+                elif elec2 == "2":
+                    eliminar(materias)
+                elif elec2 == "3":
+                    modificar(materias)
+                elif elec2 == "4":
+                    if input("[1] Desea ver todas las materias o [2] una materia en particular: ") == "1":
+                        print_dict(cursos)
+                    else:
+                        buscar(cursos)
+                        
+                elif elec2 == "0":
+                    main()
+                repetir(materias)
+                break
         elif opcion_elec == "0":
             print("Saliendo del programa...")
             exit()
-main()
 
-# Proyecto segunda parte:
-#         instancias de evaluacion de las materias
-#         notas de alumnos de la materias
-#         informes de cursadas
+
+# Punto de entrada al programa
+main()
