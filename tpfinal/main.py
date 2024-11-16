@@ -15,6 +15,8 @@ Pendientes:
 #         notas de alumnos de la materias
 #         informes de cursadas
 #         Arreglar crud (keys)
+#         Comentarios en lineas (?)
+#         Mejorar docString
 -----------------------------------------------------------------------------------------------
 """
 

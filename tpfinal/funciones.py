@@ -19,42 +19,36 @@ from dicts import *
 #----------------------------------------------------------------------------------------------
 # FUNCIONES
 #----------------------------------------------------------------------------------------------
-def id_loop(a):
-    """Funcion para asignar id automaticamente a los diccionarios"""
-    id_count=0
-    for i in a:
-        a[i]["id"]=id_count
-        id_count+=1
-    return a
+
 
 def print_dict(a):
     """Funcion para printear diccionarios"""
     for i in a:
         print(a[i])
 
-def Asignacion(alumnos, cursos):
-    """Funcion para vincular cantidad de alumnos de un curso con el curso_id de un alumno"""
+def Asignacion(alumnos, cursos:dict ):
+    """Funcion para vincular cantidad de alumnos de un curso con el curso_id de un alumno """
     for i in cursos:
         cont_curso=0
         for j in alumnos:
-            if cursos[i]["id"]==alumnos[j]["curso_id"]:
+            if cursos.keys()==alumnos[j]["curso_id"]:
                 cont_curso+=1
                 cursos[i]["alumnos"]=cont_curso
     return cursos
 
-def asignacion_2(a,b,c:str,d:str,f:str,g:str,h:str):
-    """Funcion para vincular el nombre y apellido de un profesor a la lista (profesor) de una materia"""
-    for i in a:
-        for j in b:    
-            if a[i][c] in b[j][d]:
-                a[i][f].append(b[j][g]+" "+b[j][h]) 
-    return a
+# def asignacion_2(a,b,c,d:str,f:str,g:str,h:str):
+#     """Funcion para vincular el nombre y apellido de un profesor a la lista (profesor) de una materia"""
+#     for i in a.keys():
+#         for j in b:    
+#             if a[i].keys() in b[j][d]:
+#                 a[i][f].append(b[j][g]+" "+b[j][h]) 
+#     return a
 
 def asignacion_3(materias, cursos):
     """Funcion para vincular el nombre de la materia con su curso """
     for i in materias:
         for j in cursos:
-            if materias[i]["curso"] == cursos[j]["id"]:
+            if materias[i]["curso"] == cursos[j]:
                 cursos[j]["materias"].append(materias[i]["materia_nombre"])
     return cursos
 
@@ -85,7 +79,7 @@ def eliminar(a):
             continue
         claves_a_eliminar = []
         for i in a:
-            if a[i]["id"] == id_eliminar:
+            if a[i] == id_eliminar:
                 claves_a_eliminar.append(i)
         if input(f"Está seguro que desea eliminar {a[claves_a_eliminar[0]]}? [S/N]: ").lower() == "s":
             for clave in claves_a_eliminar:
@@ -103,7 +97,7 @@ def modificar(a):
             continue
         while True:
             for i in a:
-                if a[i]["id"] == id_modificar:
+                if a[i]== id_modificar:
                     elegir = input(f"Ingrese el campo a modificar: {a[i]} - ")
                     for j in a[i]:
                         if j == elegir:
@@ -123,7 +117,7 @@ def buscar(a):
             print("Id no encontrado, intente de nuevo")
             continue
         for i in a:
-            if a[i]["id"] == id_buscar:
+            if a[i] == id_buscar:
                 print(a[i])
                 if str(input("Quiere buscar de nuevo? ")).lower() == "s":
                     continue
@@ -140,7 +134,7 @@ def agregar(a:dict):
             lista_claves.append(clave)
         break
     for i in lista_claves:
-        if i == "id":
+        if i == a.keys():
             nuevo_a[i] = len(a)
             continue
         elif i == "alumnos":
@@ -192,12 +186,8 @@ def generar_gmail(a):
             
 def llamados_principales():
     """Funcion para hacer llamados principales a todas las funciones necesarias al principio del codigo"""
-    id_loop(alumnos)
-    id_loop(profesores)
-    id_loop(cursos)
-    id_loop(materias)
     Asignacion(alumnos, cursos)
-    asignacion_2(materias, profesores, "id","materias","profesor","nombre","apellido")
+    # asignacion_2(materias, profesores, "id","materias","profesor","nombre","apellido")
     asignacion_3(materias, cursos)
     generar_gmail(alumnos)
     generar_gmail(profesores)
