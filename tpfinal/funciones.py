@@ -31,9 +31,9 @@ def Asignacion(alumnos, cursos:dict ):
     for i in cursos:
         cont_curso=0
         for j in alumnos:
-            if cursos.keys()==alumnos[j]["curso_id"]:
+            if alumnos[j]["curso_id"] == i:
                 cont_curso+=1
-                cursos[i]["alumnos"]=cont_curso
+                cursos[i]["alumnos"] = cont_curso
     return cursos
 
 # def asignacion_2(a,b,c,d:str,f:str,g:str,h:str):
@@ -74,12 +74,12 @@ def eliminar(a):
     """Funcion para eliminar algun objeto de alguna entidad"""
     while True:
         id_eliminar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a eliminar: "))
-        if id_eliminar not in a.keys():
+        if id_eliminar not in a:
             print("id no encontrado, intente de nuevo")
             continue
         claves_a_eliminar = []
         for i in a:
-            if a[i] == id_eliminar:
+            if i == id_eliminar:
                 claves_a_eliminar.append(i)
         if input(f"Está seguro que desea eliminar {a[claves_a_eliminar[0]]}? [S/N]: ").lower() == "s":
             for clave in claves_a_eliminar:
@@ -95,34 +95,32 @@ def modificar(a):
         if id_modificar not in a:
             print("Id no encontrado, intente de nuevo")
             continue
-        while True:
-            for i in a:
-                if a[i]== id_modificar:
-                    elegir = input(f"Ingrese el campo a modificar: {a[i]} - ")
-                    for j in a[i]:
-                        if j == elegir:
-                            a[i][j] = input("Ingrese el nuevo valor: ")
-                            print(a[i])
-                            return a
-                    print("Campo invalido, intente de nuevo")
-                    continue
+        else:
+            while True:
+                for i in a:
+                    if i == id_modificar:
+                        elegir = input(f"Ingrese el campo a modificar: {a[i]} - ")
+                        for j in a[i]:
+                            if j == elegir:
+                                a[i][j] = input("Ingrese el nuevo valor: ")
+                                print(a[i])
+                                return a
+                        print("Campo invalido, intente de nuevo")
+                        continue
                                
-        return a
+                return a
 
-def buscar(a):
+def buscar(a: dict):
     """Funcion para buscar un objeto en particular"""
     while True:
         id_buscar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a buscar: "))
         if id_buscar not in a:
             print("Id no encontrado, intente de nuevo")
             continue
-        for i in a:
-            if a[i] == id_buscar:
-                print(a[i])
-                if str(input("Quiere buscar de nuevo? ")).lower() == "s":
-                    continue
-                else:
-                    return False
+        else:
+            print(a[id_buscar])
+            if str(input("¿Quiere buscar de nuevo? (s/n): ")).lower() != "s":
+                return False
 
 def agregar(a:dict):
     """Funcion para agregar un objeto a una entidad"""
