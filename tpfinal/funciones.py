@@ -22,12 +22,17 @@ from dicts import *
 
 
 def print_dict(a):
-    """Funcion para printear diccionarios"""
+    """Función para printear diccionarios en una única línea de manera legible."""
     for i in a:
-        print(a[i])
+        if a[i]["estado"]:
+            print(f"ID: {i} | ", end="")
+            for key, value in a[i].items():
+                print(f"{key.capitalize()}: {value} | ", end="")
+            print()  
+
 
 def Asignacion(alumnos, cursos:dict ):
-    """Funcion para vincular cantidad de alumnos de un curso con el curso_id de un alumno """
+    """Funcion para vincular cantidad de alumnos de un curso con el curso_id de un alumno  """
     for i in cursos:
         cont_curso=0
         for j in alumnos:
@@ -48,13 +53,13 @@ def asignacion_3(materias, cursos):
     """Funcion para vincular el nombre de la materia con su curso """
     for i in materias:
         for j in cursos:
-            if materias[i]["curso"] == cursos[j]:
+            if materias[i]["curso"] == j:
                 cursos[j]["materias"].append(materias[i]["materia_nombre"])
     return cursos
 
 def men_2(a):
     """Funcion para printear el submenu de cada entidad"""
-    opciones=[f"[1] Ingresar {a} nuevos", f"[2] Eliminar {a}", f"[3] Modificar {a}", f"[4] Ver {a}", f"[0] Atras"]
+    opciones=[f"[1] Ingresar {a} nuevos", f"[2] Baja de {a}",f"[3] Alta de {a}", f"[4] Modificar {a}", f"[5] Ver {a}", f"[0] Atras"]
     for i in opciones:
         print(i)
 
@@ -73,7 +78,7 @@ def salir():
 def eliminar(a):
     """Funcion para eliminar algun objeto de alguna entidad"""
     while True:
-        id_eliminar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a eliminar: "))
+        id_eliminar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a dar de baja: "))
         if id_eliminar not in a:
             print("id no encontrado, intente de nuevo")
             continue
@@ -83,7 +88,25 @@ def eliminar(a):
                 claves_a_eliminar.append(i)
         if input(f"Está seguro que desea eliminar {a[claves_a_eliminar[0]]}? [S/N]: ").lower() == "s":
             for clave in claves_a_eliminar:
-                del a[clave]
+                a[clave]["estado"] = False
+        else:
+            print(f"No se eliminó {a[claves_a_eliminar[0]]}")
+        return a
+
+def alta(a):
+    """Funcion para eliminar algun objeto de alguna entidad"""
+    while True:
+        id_eliminar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a dar de alta: "))
+        if id_eliminar not in a:
+            print("id no encontrado, intente de nuevo")
+            continue
+        claves_a_eliminar = []
+        for i in a:
+            if i == id_eliminar:
+                claves_a_eliminar.append(i)
+        if input(f"Está seguro que desea dar de alta {a[claves_a_eliminar[0]]}? [S/N]: ").lower() == "s":
+            for clave in claves_a_eliminar:
+                a[clave]["estado"] = True
         else:
             print(f"No se eliminó {a[claves_a_eliminar[0]]}")
         return a
@@ -118,7 +141,10 @@ def buscar(a: dict):
             print("Id no encontrado, intente de nuevo")
             continue
         else:
-            print(a[id_buscar])
+            if a[id_buscar]["estado"]:
+                print(f"{id_buscar}: {', '.join([f'{key.capitalize()}: {value}' for key, value in a[id_buscar].items()])}")
+            else:
+                print(f"{id_buscar} no está activo (estado: False)")
             if str(input("¿Quiere buscar de nuevo? (s/n): ")).lower() != "s":
                 return False
 
