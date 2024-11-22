@@ -15,6 +15,7 @@ Pendientes:
 # MÓDULOS
 #----------------------------------------------------------------------------------------------
 from dicts import *
+import json
 
 #----------------------------------------------------------------------------------------------
 # FUNCIONES
@@ -48,7 +49,7 @@ def asignacion_3(materias, cursos):
     """Funcion para vincular el nombre de la materia con su curso """
     for i in materias:
         for j in cursos:
-            if materias[i]["curso"] == cursos[j]:
+            if materias[i]["curso"] == j:
                 cursos[j]["materias"].append(materias[i]["materia_nombre"])
     return cursos
 
@@ -181,11 +182,15 @@ def generar_gmail(a):
             elif j == "gmail":
                 a[i][j] = inicial.lower() + ape.lower() + gmail
     return a
+
+
             
 def llamados_principales():
+    global alumnos, profesores, cursos, materias
     """Funcion para hacer llamados principales a todas las funciones necesarias al principio del codigo"""
     Asignacion(alumnos, cursos)
     # asignacion_2(materias, profesores, "id","materias","profesor","nombre","apellido")
     asignacion_3(materias, cursos)
     generar_gmail(alumnos)
     generar_gmail(profesores)
+    
