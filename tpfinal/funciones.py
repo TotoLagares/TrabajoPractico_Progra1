@@ -1,4 +1,3 @@
-
 """
 -----------------------------------------------------------------------------------------------
 Título: Trabajo practico, primer parcial.
@@ -17,6 +16,7 @@ Pendientes:
 from dicts import *
 import json
 
+
 #----------------------------------------------------------------------------------------------
 # FUNCIONES
 #----------------------------------------------------------------------------------------------
@@ -24,21 +24,24 @@ import json
 def print_dict(a):
     """
     Imprime un diccionario en formato de una sola línea, de manera legible.
-
     Args:
         a (dict): Diccionario que contiene las entidades a imprimir.
-
     Funcionamiento:
         - Itera sobre cada elemento del diccionario.
         - Si el estado de la entidad es `True`, imprime sus valores en una sola línea.
         - Cada campo de la entidad es presentado con su nombre capitalizado.
     """
+    nombre=obtener_nombre_diccionario(a)
+    f= open(f"jsons/{nombre}_json", mode="r", encoding="utf-8")
+    a= json.load(f)
+    f.close()
     for i in a:
         if a[i]["estado"]:
-            print(f"ID: {i} | ", end="")
+            print(f"ID: {i} | ", end="")    
             for key, value in a[i].items():
                 print(f"{key.capitalize()}: {value} | ", end="")
             print()
+
 
 
 def Asignacion(alumnos, cursos: dict):
@@ -56,14 +59,34 @@ def Asignacion(alumnos, cursos: dict):
         - Cuenta cuántos alumnos están asignados a cada curso según el campo `curso_id`.
         - Actualiza el campo `alumnos` de cada curso con la cantidad correspondiente.
     """
+    f=open("jsons/alumnos_json", mode="r", encoding="utf-8")
+    alumnos=json.load(f)
+    f.close()
+
+    f=open("jsons/cursos_json", mode="r", encoding="utf-8")
+    cursos=json.load(f)
+    f.close()
+
     for i in cursos:
         cont_curso = 0
         for j in alumnos:
             if alumnos[j]["curso_id"] == i:
                 cont_curso += 1
-                cursos[i]["alumnos"] = cont_curso
-    return cursos
+        cursos[i]["alumnos"] = cont_curso
+        print(cursos[i])
+    f=open("jsons/cursos_json", mode="w", encoding="utf-8")
+    json.dump(cursos,f, indent=4, ensure_ascii=False)
+    f.close()
+    
 
+# def asignacion_2(a,b,c,d:str,f:str,g:str,h:str):
+#     """Funcion para vincular el nombre y apellido de un profesor a la lista (profesor) de una materia"""
+
+#     for i in a.keys():
+#         for j in b:
+#             if a[i].keys() in b[j][d]:
+#                 a[i][f].append(b[j][g]+" "+b[j][h])
+#     return a
 
 def asignacion_3(materias, cursos):
     """
@@ -128,30 +151,45 @@ def salir():
     exit()
 
 
-def eliminar(a):
+
+def eliminar(a, nombre_diccionario):
     """
     Marca un objeto como eliminado cambiando su estado a `False`.
 
     Args:
         a (dict): Diccionario que contiene la entidad a gestionar.
+        nombre_diccionario (str): Nombre del diccionario para identificar el archivo JSON.
 
     Funcionamiento:
         - Solicita el ID del objeto a eliminar.
         - Cambia el estado del objeto a `False` si se confirma la eliminación.
     """
     try:
+        with open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8") as f:
+            a = json.load(f)
+
         while True:
-            id_eliminar = int(input(f"Ingrese el id del {obtener_nombre_diccionario(a)} a dar de baja: "))
+            id_eliminar = int(input(f"Ingrese el id del {nombre_diccionario} a dar de baja: "))
             if id_eliminar not in a:
                 print("ID no encontrado, intente de nuevo")
                 continue
+
             if input(f"Está seguro que desea eliminar {a[id_eliminar]}? [S/N]: ").lower() == "s":
                 a[id_eliminar]["estado"] = False
+                with open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8") as f:
+                    json.dump(a, f, indent=4, ensure_ascii=False)
+                print(f"{a[id_eliminar]} ha sido eliminado.")
+                break
             else:
                 print(f"No se eliminó {a[id_eliminar]}")
-            return a
+                break
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
+    except FileNotFoundError:
+        print(f"Archivo jsons/{nombre_diccionario}_json no encontrado.")
+    except json.JSONDecodeError:
+        print(f"Error al decodificar el archivo jsons/{nombre_diccionario}_json.")
+
 
 
 def alta(a):
@@ -331,9 +369,7 @@ def llamados_principales():
         - Vincula profesores y materias a cursos.
         - Genera correos electrónicos para profesores y alumnos.
     """
-    global alumnos, profesores, cursos, materias
     Asignacion(alumnos, cursos)
-    # asignacion_2(materias, profesores, "id", "materias", "profesor", "nombre", "apellido")
     asignacion_3(materias, cursos)
     generar_gmail(alumnos)
     generar_gmail(profesores)

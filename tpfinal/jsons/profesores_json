@@ -1,0 +1,182 @@
+{
+    "0": {
+        "nombre": "Santiago",
+        "apellido": "Pérez",
+        "materias": [
+            1,
+            9,
+            19
+        ],
+        "telefono": "+54 11 12345678",
+        "gmail": "",
+        "estado": true
+    },
+    "1": {
+        "nombre": "María",
+        "apellido": "López",
+        "materias": [
+            2,
+            10,
+            20
+        ],
+        "telefono": "+54 11 23456789",
+        "gmail": "",
+        "estado": true
+    },
+    "2": {
+        "nombre": "Carlos",
+        "apellido": "García",
+        "materias": [
+            3,
+            11,
+            21
+        ],
+        "telefono": "+54 11 34567890",
+        "gmail": "",
+        "estado": true
+    },
+    "3": {
+        "nombre": "Ana",
+        "apellido": "Fernández",
+        "materias": [
+            4,
+            12,
+            22
+        ],
+        "telefono": "+54 11 45678901",
+        "gmail": "",
+        "estado": true
+    },
+    "4": {
+        "nombre": "Javier",
+        "apellido": "Martínez",
+        "materias": [
+            5,
+            15,
+            25
+        ],
+        "telefono": "+54 11 56789012",
+        "gmail": "",
+        "estado": true
+    },
+    "5": {
+        "nombre": "Lucía",
+        "apellido": "Gómez",
+        "materias": [
+            6,
+            16,
+            26
+        ],
+        "telefono": "+54 11 67890123",
+        "gmail": "",
+        "estado": true
+    },
+    "6": {
+        "nombre": "Ricardo",
+        "apellido": "Sánchez",
+        "materias": [
+            7,
+            17,
+            27
+        ],
+        "telefono": "+54 11 78901234",
+        "gmail": "",
+        "estado": true
+    },
+    "7": {
+        "nombre": "Paola",
+        "apellido": "Ramírez",
+        "materias": [
+            8,
+            18,
+            28
+        ],
+        "telefono": "+54 11 89012345",
+        "gmail": "",
+        "estado": true
+    },
+    "8": {
+        "nombre": "Diego",
+        "apellido": "Torres",
+        "materias": [
+            29,
+            31,
+            41
+        ],
+        "telefono": "+54 11 90123456",
+        "gmail": "",
+        "estado": true
+    },
+    "9": {
+        "nombre": "Valentina",
+        "apellido": "Hernández",
+        "materias": [
+            30,
+            32,
+            42
+        ],
+        "telefono": "+54 11 01234567",
+        "gmail": "",
+        "estado": true
+    },
+    "10": {
+        "nombre": "Fernando",
+        "apellido": "Alvarez",
+        "materias": [
+            33,
+            34,
+            44
+        ],
+        "telefono": "+54 11 12345678",
+        "gmail": "",
+        "estado": true
+    },
+    "11": {
+        "nombre": "Natalia",
+        "apellido": "Benítez",
+        "materias": [
+            35,
+            36,
+            45
+        ],
+        "telefono": "+54 11 23456789",
+        "gmail": "",
+        "estado": true
+    },
+    "12": {
+        "nombre": "Emilio",
+        "apellido": "Castro",
+        "materias": [
+            37,
+            38,
+            46
+        ],
+        "telefono": "+54 11 34567890",
+        "gmail": "",
+        "estado": true
+    },
+    "13": {
+        "nombre": "Camila",
+        "apellido": "Ríos",
+        "materias": [
+            39,
+            40,
+            47
+        ],
+        "telefono": "+54 11 45678901",
+        "gmail": "",
+        "estado": true
+    },
+    "14": {
+        "nombre": "Gabriel",
+        "apellido": "Ponce",
+        "materias": [
+            41,
+            42,
+            48
+        ],
+        "telefono": "+54 11 56789012",
+        "gmail": "",
+        "estado": true
+    }
+}

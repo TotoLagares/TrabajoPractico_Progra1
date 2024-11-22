@@ -42,22 +42,6 @@ def main():
         - Presenta un menú principal al usuario con opciones para gestionar diferentes entidades (alumnos, profesores, cursos y materias).
         - Para cada entidad, muestra un submenú con acciones disponibles como agregar, eliminar, modificar, ver y buscar objetos.
         - Incluye manejo de errores para entradas no válidas.
-
-    Menú Principal:
-        [1] Alumnos
-        [2] Profesores
-        [3] Cursos
-        [4] Materias
-        [0] Salir
-
-    Submenú por Entidad:
-        [1] Ingresar nuevos
-        [2] Baja
-        [3] Alta
-        [4] Modificar
-        [5] Ver
-        [0] Atrás
-
     Excepciones:
         - Maneja errores por entradas no válidas (ValueError).
         - Captura errores inesperados (Exception) y notifica al usuario.
@@ -83,7 +67,7 @@ def main():
                     if elec2 == "1":
                         agregar(alumnos)
                     elif elec2 == "2":
-                        eliminar(alumnos)
+                        eliminar(alumnos, obtener_nombre_diccionario(alumnos))
                     elif elec2 == "3":
                         alta(alumnos)
                     elif elec2 == "4":
@@ -108,7 +92,7 @@ def main():
                     if elec2 == "1":
                         agregar(profesores)
                     elif elec2 == "2":
-                        eliminar(profesores)
+                        eliminar(profesores, obtener_nombre_diccionario(profesores))
                     elif elec2 == "3":
                         alta(profesores)
                     elif elec2 == "4":
@@ -133,7 +117,7 @@ def main():
                     if elec2 == "1":
                         agregar(cursos)
                     elif elec2 == "2":
-                        eliminar(cursos)
+                        eliminar(cursos, obtener_nombre_diccionario(cursos))
                     elif elec2 == "3":
                         alta(cursos)
                     elif elec2 == "4":
@@ -158,7 +142,7 @@ def main():
                     if elec2 == "1":
                         agregar(materias)
                     elif elec2 == "2":
-                        eliminar(materias)
+                        eliminar(materias, obtener_nombre_diccionario(materias))
                     elif elec2 == "3":
                         alta(materias)
                     elif elec2 == "4":
