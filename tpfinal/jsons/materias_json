@@ -1,73 +1,97 @@
 {
     "1": {
         "materia_nombre": "Lengua y Literatura I",
-        "profesor": [],
+        "profesor": [
+            "Santiago Pérez"
+        ],
         "curso": 0,
         "estado": false
     },
     "2": {
         "materia_nombre": "Matemática I",
-        "profesor": [],
+        "profesor": [
+            "María López"
+        ],
         "curso": 0,
         "estado": false
     },
     "3": {
         "materia_nombre": "Ciencias Sociales I",
-        "profesor": [],
+        "profesor": [
+            "Carlos García"
+        ],
         "curso": 0,
         "estado": true
     },
     "4": {
         "materia_nombre": "Ciencias Naturales I",
-        "profesor": [],
+        "profesor": [
+            "Ana Fernández"
+        ],
         "curso": 0,
         "estado": true
     },
     "5": {
         "materia_nombre": "Educación Física I",
-        "profesor": [],
+        "profesor": [
+            "Javier Martínez"
+        ],
         "curso": 0,
         "estado": true
     },
     "6": {
         "materia_nombre": "Inglés I",
-        "profesor": [],
+        "profesor": [
+            "Lucía Gómez"
+        ],
         "curso": 0,
         "estado": true
     },
     "7": {
         "materia_nombre": "Tecnología I",
-        "profesor": [],
+        "profesor": [
+            "Ricardo Sánchez"
+        ],
         "curso": 0,
         "estado": true
     },
     "8": {
         "materia_nombre": "Arte I",
-        "profesor": [],
+        "profesor": [
+            "Paola Ramírez"
+        ],
         "curso": 0,
         "estado": true
     },
     "9": {
         "materia_nombre": "Lengua y Literatura II",
-        "profesor": [],
+        "profesor": [
+            "Santiago Pérez"
+        ],
         "curso": 1,
         "estado": true
     },
     "10": {
         "materia_nombre": "Matemática II",
-        "profesor": [],
+        "profesor": [
+            "María López"
+        ],
         "curso": 1,
         "estado": true
     },
     "11": {
         "materia_nombre": "Historia I",
-        "profesor": [],
+        "profesor": [
+            "Carlos García"
+        ],
         "curso": 1,
         "estado": true
     },
     "12": {
         "materia_nombre": "Geografía I",
-        "profesor": [],
+        "profesor": [
+            "Ana Fernández"
+        ],
         "curso": 1,
         "estado": true
     },
@@ -85,49 +109,65 @@
     },
     "15": {
         "materia_nombre": "Educación Física II",
-        "profesor": [],
+        "profesor": [
+            "Javier Martínez"
+        ],
         "curso": 1,
         "estado": true
     },
     "16": {
         "materia_nombre": "Inglés II",
-        "profesor": [],
+        "profesor": [
+            "Lucía Gómez"
+        ],
         "curso": 1,
         "estado": true
     },
     "17": {
         "materia_nombre": "Tecnología II",
-        "profesor": [],
+        "profesor": [
+            "Ricardo Sánchez"
+        ],
         "curso": 1,
         "estado": true
     },
     "18": {
         "materia_nombre": "Arte II",
-        "profesor": [],
+        "profesor": [
+            "Paola Ramírez"
+        ],
         "curso": 1,
         "estado": true
     },
     "19": {
         "materia_nombre": "Lengua y Literatura III",
-        "profesor": [],
+        "profesor": [
+            "Santiago Pérez"
+        ],
         "curso": 2,
         "estado": true
     },
     "20": {
         "materia_nombre": "Matemática III",
-        "profesor": [],
+        "profesor": [
+            "María López"
+        ],
         "curso": 2,
         "estado": true
     },
     "21": {
         "materia_nombre": "Historia II",
-        "profesor": [],
+        "profesor": [
+            "Carlos García"
+        ],
         "curso": 2,
         "estado": true
     },
     "22": {
         "materia_nombre": "Geografía II",
-        "profesor": [],
+        "profesor": [
+            "Ana Fernández"
+        ],
         "curso": 2,
         "estado": true
     },
@@ -145,109 +185,145 @@
     },
     "25": {
         "materia_nombre": "Educación Física III",
-        "profesor": [],
+        "profesor": [
+            "Javier Martínez"
+        ],
         "curso": 2,
         "estado": true
     },
     "26": {
         "materia_nombre": "Inglés III",
-        "profesor": [],
+        "profesor": [
+            "Lucía Gómez"
+        ],
         "curso": 2,
         "estado": true
     },
     "27": {
         "materia_nombre": "Tecnología III",
-        "profesor": [],
+        "profesor": [
+            "Ricardo Sánchez"
+        ],
         "curso": 2,
         "estado": true
     },
     "28": {
         "materia_nombre": "Arte III",
-        "profesor": [],
+        "profesor": [
+            "Paola Ramírez"
+        ],
         "curso": 2,
         "estado": true
     },
     "29": {
         "materia_nombre": "Lengua y Literatura IV",
-        "profesor": [],
+        "profesor": [
+            "Diego Torres"
+        ],
         "curso": 3,
         "estado": true
     },
     "30": {
         "materia_nombre": "Matemática IV",
-        "profesor": [],
+        "profesor": [
+            "Valentina Hernández"
+        ],
         "curso": 3,
         "estado": true
     },
     "31": {
         "materia_nombre": "Historia III",
-        "profesor": [],
+        "profesor": [
+            "Diego Torres"
+        ],
         "curso": 3,
         "estado": true
     },
     "32": {
         "materia_nombre": "Geografía III",
-        "profesor": [],
+        "profesor": [
+            "Valentina Hernández"
+        ],
         "curso": 3,
         "estado": true
     },
     "33": {
         "materia_nombre": "Biología II",
-        "profesor": [],
+        "profesor": [
+            "Fernando Alvarez"
+        ],
         "curso": 3,
         "estado": true
     },
     "34": {
         "materia_nombre": "Física II",
-        "profesor": [],
+        "profesor": [
+            "Fernando Alvarez"
+        ],
         "curso": 3,
         "estado": true
     },
     "35": {
         "materia_nombre": "Química III",
-        "profesor": [],
+        "profesor": [
+            "Natalia Benítez"
+        ],
         "curso": 3,
         "estado": true
     },
     "36": {
         "materia_nombre": "Educación Física IV",
-        "profesor": [],
+        "profesor": [
+            "Natalia Benítez"
+        ],
         "curso": 3,
         "estado": true
     },
     "37": {
         "materia_nombre": "Inglés IV",
-        "profesor": [],
+        "profesor": [
+            "Emilio Castro"
+        ],
         "curso": 3,
         "estado": true
     },
     "38": {
         "materia_nombre": "Tecnología IV",
-        "profesor": [],
+        "profesor": [
+            "Emilio Castro"
+        ],
         "curso": 3,
         "estado": true
     },
     "39": {
         "materia_nombre": "Arte IV",
-        "profesor": [],
+        "profesor": [
+            "Camila Ríos"
+        ],
         "curso": 3,
         "estado": true
     },
     "40": {
         "materia_nombre": "Lengua y Literatura V",
-        "profesor": [],
+        "profesor": [
+            "Camila Ríos"
+        ],
         "curso": 4,
         "estado": true
     },
     "41": {
         "materia_nombre": "Matemática V",
-        "profesor": [],
+        "profesor": [
+            "Diego Torres"
+        ],
         "curso": 4,
         "estado": true
     },
     "42": {
         "materia_nombre": "Historia IV",
-        "profesor": [],
+        "profesor": [
+            "Valentina Hernández"
+        ],
         "curso": 4,
         "estado": true
     },
@@ -259,37 +335,49 @@
     },
     "44": {
         "materia_nombre": "Ciencias Naturales I",
-        "profesor": [],
+        "profesor": [
+            "Fernando Alvarez"
+        ],
         "curso": 4,
         "estado": true
     },
     "45": {
         "materia_nombre": "Orientación Vocacional I",
-        "profesor": [],
+        "profesor": [
+            "Natalia Benítez"
+        ],
         "curso": 4,
         "estado": true
     },
     "46": {
         "materia_nombre": "Inglés V",
-        "profesor": [],
+        "profesor": [
+            "Emilio Castro"
+        ],
         "curso": 4,
         "estado": true
     },
     "47": {
         "materia_nombre": "Educación Física V",
-        "profesor": [],
+        "profesor": [
+            "Camila Ríos"
+        ],
         "curso": 4,
         "estado": true
     },
     "48": {
         "materia_nombre": "Tecnología V",
-        "profesor": [],
+        "profesor": [
+            "Gabriel Ponce"
+        ],
         "curso": 4,
         "estado": true
     },
     "49": {
         "materia_nombre": "Arte V",
-        "profesor": [],
+        "profesor": [
+            "Carlos García"
+        ],
         "curso": 4,
         "estado": true
     }

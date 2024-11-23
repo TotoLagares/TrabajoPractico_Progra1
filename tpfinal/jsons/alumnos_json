@@ -3,7 +3,7 @@
         "nombre": "Sofía",
         "apellido": "González",
         "curso_id": 0,
-        "gmail": "",
+        "gmail": "Sgonzález@edu.ar",
         "telefono": "+54 11 12345678",
         "estado": true
     },
@@ -11,7 +11,7 @@
         "nombre": "ignacio",
         "apellido": "bailo",
         "curso_id": 0,
-        "gmail": "",
+        "gmail": "Ibailo@edu.ar",
         "telefono": "+54 11 23456789",
         "estado": true
     },
@@ -19,7 +19,7 @@
         "nombre": "Martín",
         "apellido": "Pérez",
         "curso_id": 1,
-        "gmail": "",
+        "gmail": "Mpérez@edu.ar",
         "telefono": "+54 11 34567890",
         "estado": true
     },
@@ -27,7 +27,7 @@
         "nombre": "Ana",
         "apellido": "Martínez",
         "curso_id": 1,
-        "gmail": "",
+        "gmail": "Amartínez@edu.ar",
         "telefono": "+54 11 45678901",
         "estado": true
     },
@@ -35,7 +35,7 @@
         "nombre": "Valentina",
         "apellido": "Ramírez",
         "curso_id": 2,
-        "gmail": "",
+        "gmail": "Vramírez@edu.ar",
         "telefono": "+54 11 56789012",
         "estado": true
     },
@@ -43,7 +43,7 @@
         "nombre": "Diego",
         "apellido": "Hernández",
         "curso_id": 2,
-        "gmail": "",
+        "gmail": "Dhernández@edu.ar",
         "telefono": "+54 11 67890123",
         "estado": true
     },
@@ -51,7 +51,7 @@
         "nombre": "Camila",
         "apellido": "Torres",
         "curso_id": 3,
-        "gmail": "",
+        "gmail": "Ctorres@edu.ar",
         "telefono": "+54 11 78901234",
         "estado": true
     },
@@ -59,7 +59,7 @@
         "nombre": "Javier",
         "apellido": "Sánchez",
         "curso_id": 3,
-        "gmail": "",
+        "gmail": "Jsánchez@edu.ar",
         "telefono": "+54 11 89012345",
         "estado": true
     },
@@ -67,7 +67,7 @@
         "nombre": "Laura",
         "apellido": "Molina",
         "curso_id": 4,
-        "gmail": "",
+        "gmail": "Lmolina@edu.ar",
         "telefono": "+54 11 90123456",
         "estado": true
     },
@@ -75,7 +75,7 @@
         "nombre": "Felipe",
         "apellido": "Cruz",
         "curso_id": 4,
-        "gmail": "",
+        "gmail": "Fcruz@edu.ar",
         "telefono": "+54 11 01234567",
         "estado": true
     },
@@ -83,7 +83,7 @@
         "nombre": "Nicolás",
         "apellido": "Jiménez",
         "curso_id": 0,
-        "gmail": "",
+        "gmail": "Njiménez@edu.ar",
         "telefono": "+54 11 12345678",
         "estado": true
     },
@@ -91,7 +91,7 @@
         "nombre": "Lucía",
         "apellido": "Salazar",
         "curso_id": 0,
-        "gmail": "",
+        "gmail": "Lsalazar@edu.ar",
         "telefono": "+54 11 23456789",
         "estado": true
     },
@@ -99,7 +99,7 @@
         "nombre": "Andrés",
         "apellido": "Morales",
         "curso_id": 1,
-        "gmail": "",
+        "gmail": "Amorales@edu.ar",
         "telefono": "+54 11 34567890",
         "estado": true
     },
@@ -107,7 +107,7 @@
         "nombre": "Isabella",
         "apellido": "Vargas",
         "curso_id": 1,
-        "gmail": "",
+        "gmail": "Ivargas@edu.ar",
         "telefono": "+54 11 45678901",
         "estado": true
     },
@@ -115,7 +115,7 @@
         "nombre": "Gabriel",
         "apellido": "Aguilar",
         "curso_id": 2,
-        "gmail": "",
+        "gmail": "Gaguilar@edu.ar",
         "telefono": "+54 11 56789012",
         "estado": true
     },
@@ -123,7 +123,7 @@
         "nombre": "Renata",
         "apellido": "Ponce",
         "curso_id": 2,
-        "gmail": "",
+        "gmail": "Rponce@edu.ar",
         "telefono": "+54 11 67890123",
         "estado": true
     },
@@ -131,7 +131,7 @@
         "nombre": "Esteban",
         "apellido": "Salas",
         "curso_id": 3,
-        "gmail": "",
+        "gmail": "Esalas@edu.ar",
         "telefono": "+54 11 78901234",
         "estado": true
     },
@@ -139,7 +139,7 @@
         "nombre": "Samantha",
         "apellido": "Mendoza",
         "curso_id": 3,
-        "gmail": "",
+        "gmail": "Smendoza@edu.ar",
         "telefono": "+54 11 89012345",
         "estado": true
     },
@@ -147,7 +147,7 @@
         "nombre": "Hugo",
         "apellido": "Córdoba",
         "curso_id": 4,
-        "gmail": "",
+        "gmail": "Hcórdoba@edu.ar",
         "telefono": "+54 11 90123456",
         "estado": true
     },
@@ -155,7 +155,7 @@
         "nombre": "Valeria",
         "apellido": "Ríos",
         "curso_id": 4,
-        "gmail": "",
+        "gmail": "Vríos@edu.ar",
         "telefono": "+54 11 01234567",
         "estado": true
     },
@@ -163,7 +163,7 @@
         "nombre": "Joaquín",
         "apellido": "Alvarado",
         "curso_id": 0,
-        "gmail": "",
+        "gmail": "Jalvarado@edu.ar",
         "telefono": "+54 11 12345678",
         "estado": true
     },
@@ -171,7 +171,7 @@
         "nombre": "Martina",
         "apellido": "Benítez",
         "curso_id": 0,
-        "gmail": "",
+        "gmail": "Mbenítez@edu.ar",
         "telefono": "+54 11 23456789",
         "estado": true
     },
@@ -179,7 +179,7 @@
         "nombre": "Natalia",
         "apellido": "Rincón",
         "curso_id": 1,
-        "gmail": "",
+        "gmail": "Nrincón@edu.ar",
         "telefono": "+54 11 34567890",
         "estado": true
     },
@@ -187,7 +187,7 @@
         "nombre": "Camilo",
         "apellido": "Alvarado",
         "curso_id": 1,
-        "gmail": "",
+        "gmail": "Calvarado@edu.ar",
         "telefono": "+54 11 45678901",
         "estado": true
     },
@@ -195,7 +195,7 @@
         "nombre": "Ángela",
         "apellido": "Paz",
         "curso_id": 0,
-        "gmail": "",
+        "gmail": "Ápaz@edu.ar",
         "telefono": "+54 11 56789012",
         "estado": true
     },
@@ -203,7 +203,7 @@
         "nombre": "Sebastián",
         "apellido": "Hernández",
         "curso_id": 1,
-        "gmail": "",
+        "gmail": "Shernández@edu.ar",
         "telefono": "+54 11 67890123",
         "estado": true
     },
@@ -211,7 +211,7 @@
         "nombre": "Lucía",
         "apellido": "Salas",
         "curso_id": 2,
-        "gmail": "",
+        "gmail": "Lsalas@edu.ar",
         "telefono": "+54 11 78901234",
         "estado": true
     },
@@ -219,7 +219,7 @@
         "nombre": "Ricardo",
         "apellido": "Torres",
         "curso_id": 3,
-        "gmail": "",
+        "gmail": "Rtorres@edu.ar",
         "telefono": "+54 11 89012345",
         "estado": true
     },
@@ -227,7 +227,7 @@
         "nombre": "Fernanda",
         "apellido": "Cruz",
         "curso_id": 4,
-        "gmail": "",
+        "gmail": "Fcruz@edu.ar",
         "telefono": "+54 11 90123456",
         "estado": true
     },
@@ -235,8 +235,16 @@
         "nombre": "Diego",
         "apellido": "Jiménez",
         "curso_id": 0,
-        "gmail": "",
+        "gmail": "Djiménez@edu.ar",
         "telefono": "+54 11 01234567",
+        "estado": true
+    },
+    "30": {
+        "nombre": "santiago",
+        "apellido": "lagares",
+        "curso_id": "5",
+        "gmail": "",
+        "telefono": "1234441",
         "estado": true
     }
 }

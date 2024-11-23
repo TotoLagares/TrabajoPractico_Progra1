@@ -13,13 +13,13 @@ Pendientes:
 #----------------------------------------------------------------------------------------------
 # MÓDULOS
 #----------------------------------------------------------------------------------------------
-from dicts import *
 import json
 
 
 #----------------------------------------------------------------------------------------------
 # FUNCIONES
 #----------------------------------------------------------------------------------------------
+
 
 def print_dict(a):
     """
@@ -44,7 +44,7 @@ def print_dict(a):
 
 
 
-def Asignacion(alumnos, cursos: dict):
+def Asignacion():
     """
     Asigna la cantidad de alumnos a cada curso según su `curso_id`.
 
@@ -70,25 +70,37 @@ def Asignacion(alumnos, cursos: dict):
     for i in cursos:
         cont_curso = 0
         for j in alumnos:
-            if alumnos[j]["curso_id"] == i:
+            if str(alumnos[j]["curso_id"]) == i:
                 cont_curso += 1
-        cursos[i]["alumnos"] = cont_curso
-        print(cursos[i])
+        cursos[i]["alumnos"] = cont_curso  
+
+
     f=open("jsons/cursos_json", mode="w", encoding="utf-8")
-    json.dump(cursos,f, indent=4, ensure_ascii=False)
+    json.dump(cursos, f, indent=4, ensure_ascii=False)
     f.close()
     
 
-# def asignacion_2(a,b,c,d:str,f:str,g:str,h:str):
-#     """Funcion para vincular el nombre y apellido de un profesor a la lista (profesor) de una materia"""
+def asignacion_2():
+    """Funcion para vincular el nombre y apellido de un profesor a la lista (profesor) de una materia"""
+    f=open("jsons/materias_json", mode="r", encoding="utf-8")
+    materias=json.load(f)
+    f.close()
 
-#     for i in a.keys():
-#         for j in b:
-#             if a[i].keys() in b[j][d]:
-#                 a[i][f].append(b[j][g]+" "+b[j][h])
-#     return a
+    f=open("jsons/profesores_json", mode="r", encoding="utf-8")
+    profesores=json.load(f)
+    f.close()
 
-def asignacion_3(materias, cursos):
+    for i in materias:
+        for j in profesores:
+            if int(i) in profesores[j]["materias"]:
+                if len(materias[i]["profesor"]) == 0:
+                    materias[i]["profesor"].append(profesores[j]["nombre"]+" "+profesores[j]["apellido"])
+    
+    f=open("jsons/materias_json", mode="w", encoding="utf-8")
+    json.dump(materias, f, indent=4, ensure_ascii=False)
+    f.close()
+
+def asignacion_3():
     """
     Vincula el nombre de cada materia con el curso al que pertenece.
 
@@ -103,12 +115,22 @@ def asignacion_3(materias, cursos):
         - Itera sobre las materias y encuentra el curso correspondiente.
         - Añade el nombre de la materia a la lista de `materias` del curso.
     """
+    f=open("jsons/materias_json", mode="r", encoding="utf-8")
+    materias=json.load(f)
+    f.close()
+
+    f=open("jsons/cursos_json", mode="r", encoding="utf-8")
+    cursos=json.load(f)
+    f.close()
+
     for i in materias:
         for j in cursos:
-            if materias[i]["curso"] == j:
+            if str(materias[i]["curso"]) == j:
                 cursos[j]["materias"].append(materias[i]["materia_nombre"])
-    return cursos
 
+    f=open("jsons/cursos_json", mode="w", encoding="utf-8")
+    json.dump(cursos, f, indent=4, ensure_ascii=False)
+    f.close()
 
 def men_2(a):
     """
@@ -296,7 +318,7 @@ def buscar(a: dict):
         print("Valor ingresado no válido, intente de nuevo")
 
 
-def agregar(a: dict):
+def agregar(nombre_diccionario):
     """
     Agrega un nuevo objeto a una entidad.
 
@@ -309,6 +331,9 @@ def agregar(a: dict):
         - Añade el nuevo objeto al diccionario con una clave única.
     """
     try:
+        f=open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8")
+        a=json.load(f)
+        f.close()
         lista_claves = []
         nuevo_a = {}
         for valor, clave in a.items():
@@ -316,19 +341,17 @@ def agregar(a: dict):
                 lista_claves.append(j)
             break
         for i in lista_claves:
-            if i == "id":
-                nuevo_a[i] = len(a) + 1
-            elif i == "alumnos":
-                nuevo_a[i] = 0
-            elif i == "profesor" or i == "materias":
-                nuevo_a[i] = []
-            elif i == "gmail":
+            if i == "profesor" or i == "materias" or i == "gmail" or i=="alumnos" or i=="estado":
                 nuevo_a[i] = ""
             else:
                 nuevo_a[i] = input(f"Ingrese el nuevo {i}: ")
-        a[len(a) + 1] = nuevo_a
+        nuevo_a["estado"] = True
+        a[len(a)] = nuevo_a
         llamados_principales()
-        print(nuevo_a)
+        
+        f=open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8")
+        json.dump(a,f, indent=4, ensure_ascii=False)
+        f.close()
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
 
@@ -355,37 +378,36 @@ def repetir(a):
 
 
 def generar_gmail(nombre_diccionario):
-    """
-    Genera automáticamente correos electrónicos para profesores o alumnos.
+#     """
+#     Genera automáticamente correos electrónicos para profesores o alumnos.
 
-    Args:
-        a (dict): Diccionario que contiene los objetos para los cuales se generarán los correos.
+#     Args:
+#         a (dict): Diccionario que contiene los objetos para los cuales se generarán los correos.
 
-    Returns:
-        dict: Diccionario actualizado con los correos generados.
+#     Returns:
+#         dict: Diccionario actualizado con los correos generados.
 
-    Funcionamiento:
-        - Asigna un dominio específico según la entidad (profesores o alumnos).
-        - Construye el correo concatenando la inicial del nombre y el apellido en minúsculas.
-    """
+#     Funcionamiento:
+#         - Asigna un dominio específico según la entidad (profesores o alumnos).
+#         - Construye el correo concatenando la inicial del nombre y el apellido en minúsculas.
+#     """
 
     f = open(f"jsons/{nombre_diccionario}_json", mode="r",encoding="utf-8")
     data = json.load(f)
     f.close()
-    if str(data) == "profesores": 
+
+    if data == "profesores": 
         dominio = "@profe.edu.ar" 
     else:
         dominio = "@edu.ar"
-    for i in str(data):
-        inicial = ""
-        apellido = ""
-        for j in str(data[i]):
-            if j == "nombre":
-                inicial = str(data[i][j][0])
-            elif j == "apellido":
-                apellido = str(data[i][j])
-            elif j == "gmail":
-                str(data[i][j]) = inicial.lower() + apellido.lower() + dominio
+
+    for i in data:
+        nombre = data[i]["nombre"]
+        apellido = data[i]["apellido"]
+        inicial = nombre[0]
+        correo = f"{inicial.upper()}{apellido.lower()}{dominio}"
+        data[i]["gmail"] = correo
+
 
     f = open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8")
     json.dump(data,f,indent=4, ensure_ascii=False)
@@ -400,7 +422,24 @@ def llamados_principales():
         - Vincula profesores y materias a cursos.
         - Genera correos electrónicos para profesores y alumnos.
     """
-    Asignacion(alumnos, cursos)
-    asignacion_3(materias, cursos)
+    Asignacion()
+    asignacion_2()
+    asignacion_3()
     generar_gmail(alumnos)
     generar_gmail(profesores)
+
+f=open("jsons/alumnos_json", mode="r", encoding="utf-8")
+alumnos=json.load(f)
+f.close()
+
+f=open("jsons/profesores_json", mode="r", encoding="utf-8")
+profesores=json.load(f)
+f.close()
+
+f=open("jsons/cursos_json", mode="r", encoding="utf-8")
+cursos=json.load(f)
+f.close()
+
+f=open("jsons/materias_json", mode="r", encoding="utf-8")
+materias=json.load(f)
+f.close()
