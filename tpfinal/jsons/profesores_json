@@ -9,7 +9,8 @@
         ],
         "telefono": "+54 11 12345678",
         "gmail": "Spérez@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "santiagopérez@gmail.com"
     },
     "1": {
         "nombre": "María",
@@ -21,7 +22,8 @@
         ],
         "telefono": "+54 11 23456789",
         "gmail": "Mlópez@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "maríalópez@gmail.com"
     },
     "2": {
         "nombre": "Carlos",
@@ -34,7 +36,8 @@
         ],
         "telefono": "+54 11 34567890",
         "gmail": "Cgarcía@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "carlosgarcía@gmail.com"
     },
     "3": {
         "nombre": "Ana",
@@ -46,7 +49,8 @@
         ],
         "telefono": "+54 11 45678901",
         "gmail": "Afernández@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "anafernández@gmail.com"
     },
     "4": {
         "nombre": "Javier",
@@ -58,7 +62,8 @@
         ],
         "telefono": "+54 11 56789012",
         "gmail": "Jmartínez@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "javiermartínez@gmail.com"
     },
     "5": {
         "nombre": "Lucía",
@@ -70,7 +75,8 @@
         ],
         "telefono": "+54 11 67890123",
         "gmail": "Lgómez@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "lucíagómez@gmail.com"
     },
     "6": {
         "nombre": "Ricardo",
@@ -82,7 +88,8 @@
         ],
         "telefono": "+54 11 78901234",
         "gmail": "Rsánchez@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "ricardosánchez@gmail.com"
     },
     "7": {
         "nombre": "Paola",
@@ -94,7 +101,8 @@
         ],
         "telefono": "+54 11 89012345",
         "gmail": "Pramírez@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "paolaramírez@gmail.com"
     },
     "8": {
         "nombre": "Diego",
@@ -106,7 +114,8 @@
         ],
         "telefono": "+54 11 90123456",
         "gmail": "Dtorres@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "diegotorres@gmail.com"
     },
     "9": {
         "nombre": "Valentina",
@@ -118,7 +127,8 @@
         ],
         "telefono": "+54 11 01234567",
         "gmail": "Vhernández@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "valentinahernández@gmail.com"
     },
     "10": {
         "nombre": "Fernando",
@@ -130,7 +140,8 @@
         ],
         "telefono": "+54 11 12345678",
         "gmail": "Falvarez@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "fernandoalvarez@gmail.com"
     },
     "11": {
         "nombre": "Natalia",
@@ -142,7 +153,8 @@
         ],
         "telefono": "+54 11 23456789",
         "gmail": "Nbenítez@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "nataliabenítez@gmail.com"
     },
     "12": {
         "nombre": "Emilio",
@@ -154,7 +166,8 @@
         ],
         "telefono": "+54 11 34567890",
         "gmail": "Ecastro@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "emiliocastro@gmail.com"
     },
     "13": {
         "nombre": "Camila",
@@ -166,7 +179,8 @@
         ],
         "telefono": "+54 11 45678901",
         "gmail": "Críos@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "camilaríos@gmail.com"
     },
     "14": {
         "nombre": "Gabriel",
@@ -178,6 +192,7 @@
         ],
         "telefono": "+54 11 56789012",
         "gmail": "Gponce@edu.ar",
-        "estado": true
+        "estado": true,
+        "correo": "gabrielponce@gmail.com"
     }
 }

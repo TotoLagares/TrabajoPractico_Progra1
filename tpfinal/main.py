@@ -33,18 +33,7 @@ from funciones import *
 # CUERPO PRINCIPAL
 #----------------------------------------------------------------------------------------------
 def main():
-    """
-    Punto de entrada principal del programa.
-
-    Funcionamiento:
-        - Inicializa las configuraciones principales y realiza las asignaciones necesarias mediante `llamados_principales`.
-        - Presenta un menú principal al usuario con opciones para gestionar diferentes entidades (alumnos, profesores, cursos y materias).
-        - Para cada entidad, muestra un submenú con acciones disponibles como agregar, eliminar, modificar, ver y buscar objetos.
-        - Incluye manejo de errores para entradas no válidas.
-    Excepciones:
-        - Maneja errores por entradas no válidas (ValueError).
-        - Captura errores inesperados (Exception) y notifica al usuario.
-    """
+    """Función principal del programa"""
     try:
         llamados_principales()
         while True:
