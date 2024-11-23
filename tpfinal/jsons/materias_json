@@ -368,19 +368,11 @@
         "estado": true
     },
     "48": {
-        "materia_nombre": "Tecnología V",
+        "materia_nombre": "1",
+        "curso": "4",
+        "estado": true,
         "profesor": [
             "Gabriel Ponce"
-        ],
-        "curso": 4,
-        "estado": true
-    },
-    "49": {
-        "materia_nombre": "Arte V",
-        "profesor": [
-            "Carlos García"
-        ],
-        "curso": 4,
-        "estado": true
+        ]
     }
 }

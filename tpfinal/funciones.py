@@ -1,10 +1,10 @@
 """
 -----------------------------------------------------------------------------------------------
-Título: Trabajo práctico, primer parcial.
+Título: Trabajo practico, primer parcial.
 Fecha: 1/11/2024
-Autores: Ignacio Bailo, Santiago Lagares, Bautista Gioseffi, Ignacio Mones Ruiz, Tobias Picardo
+Autor: Ignacio Bailo, Santiago Lagares, Bautista Gioseffi, Ignacio Mones Ruiz, Tobias Picardo
 
-Descripción: Hoja de Python dedicada a las funciones del programa.
+Descripción: Hoja de python dedicada a las funciones del programa
 
 Pendientes:
 -----------------------------------------------------------------------------------------------
@@ -20,22 +20,22 @@ import json
 # FUNCIONES
 #----------------------------------------------------------------------------------------------
 
+
 def print_dict(a):
     """
     Imprime los elementos activos (estado=True) de un diccionario cargado desde un archivo JSON.
     """
-    nombre = obtener_nombre_diccionario(a)
-    # Carga los datos desde el archivo JSON correspondiente.
-    f = open(f"jsons/{nombre}_json", mode="r", encoding="utf-8")
-    a = json.load(f)
+    nombre=obtener_nombre_diccionario(a)
+    f= open(f"jsons/{nombre}_json", mode="r", encoding="utf-8")
+    a= json.load(f)
     f.close()
-    # Itera sobre cada elemento del diccionario y lo imprime si está activo.
     for i in a:
         if a[i]["estado"]:
-            print(f"ID: {i} | ", end="")
+            print(f"ID: {i} | ", end="")    
             for key, value in a[i].items():
                 print(f"{key.capitalize()}: {value} | ", end="")
             print()
+
 
 
 def Asignacion():
@@ -43,98 +43,106 @@ def Asignacion():
     Cuenta la cantidad de alumnos por curso y actualiza el campo "alumnos" en los datos de los cursos.
     """
     try:
-        f = open("jsons/alumnos_json", mode="r", encoding="utf-8")
-        alumnos = json.load(f)
+        # Abro los archivos JSON
+        f=open("jsons/alumnos_json", mode="r", encoding="utf-8")
+        alumnos=json.load(f)
         f.close()
 
-        f = open("jsons/cursos_json", mode="r", encoding="utf-8")
-        cursos = json.load(f)
+        f=open("jsons/cursos_json", mode="r", encoding="utf-8")
+        cursos=json.load(f)
         f.close()
-        # Itera sobre los cursos y los alumnos, y si el ID del curso está en los cursos de los alumnos, se suma 1 al contador de alumnos.   
+        # Cuento la cantidad de alumnos por curso
         for i in cursos:
             cont_curso = 0
             for j in alumnos:
                 if str(alumnos[j]["curso_id"]) == i:
                     cont_curso += 1
-            cursos[i]["alumnos"] = cont_curso
+            cursos[i]["alumnos"] = cont_curso  
+
+        # Actualizo el campo "alumnos" en los datos de los cursos
+        f=open("jsons/cursos_json", mode="w", encoding="utf-8")
+        json.dump(cursos, f, indent=4, ensure_ascii=False)
+        f.close()
 
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
     except FileNotFoundError:
-        print(f"Archivo no encontrado.")
+        print(f"Archivo JSON no encontrado.")
     except json.JSONDecodeError:
-        print(f"Error al decodificar el archivo.")
-
-    f = open("jsons/cursos_json", mode="w", encoding="utf-8")
-    json.dump(cursos, f, indent=4, ensure_ascii=False)
-    f.close()
-
+        print(f"Error al decodificar el archivo JSON.")
+    
 
 def asignacion_2():
     """
     Vincula los nombres completos de los profesores con las materias que dictan, actualizando el campo "profesor".
     """
     try:
-        f = open("jsons/materias_json", mode="r", encoding="utf-8")
-        materias = json.load(f)
+        # Abro los archivos JSON
+
+        f=open("jsons/materias_json", mode="r", encoding="utf-8")
+        materias=json.load(f)
         f.close()
 
-        f = open("jsons/profesores_json", mode="r", encoding="utf-8")
-        profesores = json.load(f)
+        f=open("jsons/profesores_json", mode="r", encoding="utf-8")
+        profesores=json.load(f)
         f.close()
-        # Itera sobre las materias y los profesores, y si el ID de la materia está en las materias del profesor, se agrega el nombre completo del profesor a la lista de profesores de la materia.
+
+        # Vinculo los nombres completos de los profesores con las materias que dictan
         for i in materias:
             for j in profesores:
                 if int(i) in profesores[j]["materias"]:
-                    if profesores[j]["nombre"] + " " + profesores[j]["apellido"] not in materias[i]["profesor"]:
-                        materias[i]["profesor"].append(profesores[j]["nombre"] + " " + profesores[j]["apellido"])
+                    if profesores[j]["nombre"]+" "+profesores[j]["apellido"] not in materias[i]["profesor"]:
+                        materias[i]["profesor"].append(profesores[j]["nombre"]+" "+profesores[j]["apellido"])
 
-        f = open("jsons/materias_json", mode="w", encoding="utf-8")
+        # Actualizo el campo "profesor" en los datos de las materias
+        f=open("jsons/materias_json", mode="w", encoding="utf-8")
         json.dump(materias, f, indent=4, ensure_ascii=False)
         f.close()
+
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
     except FileNotFoundError:
-        print(f"Archivo no encontrado.")
+        print(f"Archivo JSON no encontrado.")
     except json.JSONDecodeError:
-        print(f"Error al decodificar el archivo.")
-
+        print(f"Error al decodificar el archivo JSON.")
 
 def asignacion_3():
     """
     Asocia los nombres de las materias a los cursos correspondientes, actualizando el campo "materias" de cada curso.
     """
     try:
-        f = open("jsons/materias_json", mode="r", encoding="utf-8")
-        materias = json.load(f)
+        # Abro los archivos JSON
+        f=open("jsons/materias_json", mode="r", encoding="utf-8")
+        materias=json.load(f)
         f.close()
 
-        f = open("jsons/cursos_json", mode="r", encoding="utf-8")
-        cursos = json.load(f)
+        f=open("jsons/cursos_json", mode="r", encoding="utf-8")
+        cursos=json.load(f)
         f.close()
 
+        # Asocio los nombres de las materias a los cursos correspondientes
         for i in materias:
             for j in cursos:
                 if str(materias[i]["curso"]) == j:
                     if materias[i]["materia_nombre"] not in cursos[j]["materias"]:
                         cursos[j]["materias"].append(materias[i]["materia_nombre"])
-
-        f = open("jsons/cursos_json", mode="w", encoding="utf-8")
+                        
+        # Actualizo el campo "materias" de cada curso
+        f=open("jsons/cursos_json", mode="w", encoding="utf-8")
         json.dump(cursos, f, indent=4, ensure_ascii=False)
         f.close()
+
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
     except FileNotFoundError:
-        print(f"Archivo no encontrado.")
+        print(f"Archivo JSON no encontrado.")
     except json.JSONDecodeError:
-        print(f"Error al decodificar el archivo.")
-
+        print(f"Error al decodificar el archivo JSON.")
 
 def men_2(a):
     """
     Muestra un menú con opciones relacionadas a una entidad específica.
     """
-    # Muestra las opciones disponibles para la entidad seleccionada.
     opciones = [f"[1] Ingresar {a} nuevos", f"[2] Baja de {a}", f"[3] Alta de {a}",
                 f"[4] Modificar {a}", f"[5] Ver {a}", f"[0] Atras"]
     for i in opciones:
@@ -143,9 +151,8 @@ def men_2(a):
 
 def obtener_nombre_diccionario(diccionario):
     """
-    Devuelve el nombre de un diccionario global en formato de string.
+    Devuelve el nombre de un diccionario global en formato string.
     """
-    # Itera sobre los diccionarios globales y devuelve el nombre del diccionario que coincida con el parámetro.
     for nombre, valor in globals().items():
         if valor is diccionario:
             return nombre
@@ -160,38 +167,42 @@ def salir():
     exit()
 
 
+
 def eliminar(nombre_diccionario):
     """
     Marca como inactivo (estado=False) un elemento en un archivo JSON, basado en su ID.
     """
     try:
+        # Abro el archivo JSON
         f = open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8")
         data = json.load(f)
         f.close()
 
         while True:
-            # Solicita el ID del objeto a eliminar.
             id_eliminar = int(input(f"Ingrese el id del {nombre_diccionario} a dar de baja: "))
             if str(id_eliminar) not in data:
                 print("ID no encontrado, intente de nuevo")
                 continue
-            # Confirma la eliminación y actualiza el estado.
+            # Marca como inactivo el elemento en el archivo JSON
             if input(f"Está seguro que desea eliminar {data[str(id_eliminar)]}? [S/N]: ").lower() == "s":
                 data[str(id_eliminar)]["estado"] = False
-                with open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8") as f:
-                    json.dump(data, f, indent=4, ensure_ascii=False)
-                    f.close()
+                # Actualizo el archivo JSON
+                f=open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8")
+                json.dump(data, f, indent=4, ensure_ascii=False)
+                f.close()
                 print(f"{data[str(id_eliminar)]} ha sido eliminado.")
                 break
             else:
                 print(f"No se eliminó {data[id_eliminar]}")
                 break
+
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
     except FileNotFoundError:
-        print(f"Archivo jsons/{nombre_diccionario}_json no encontrado.")
+        print(f"Archivo JSON no encontrado.")
     except json.JSONDecodeError:
-        print(f"Error al decodificar el archivo jsons/{nombre_diccionario}_json.")
+        print(f"Error al decodificar el archivo JSON.")
+
 
 
 def alta(nombre_diccionario):
@@ -199,24 +210,27 @@ def alta(nombre_diccionario):
     Marca como activo (estado=True) un elemento previamente inactivo en un archivo JSON, basado en su ID.
     """
     try:
+        # Abro el archivo JSON
         f = open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8")
         data = json.load(f)
         f.close()
         while True:
-            # Solicita el ID del objeto a activar.
+            # Marca como activo el elemento en el archivo JSON
             id_alta = int(input(f"Ingrese el id del {nombre_diccionario} a dar de alta: "))
             if str(id_alta) not in data:
                 print("ID no encontrado, intente de nuevo")
                 continue
-             # Confirma la eliminación y actualiza el estado.
+
+            # Actualizo el archivo JSON
             if input(f"Está seguro que desea dar de alta {data[str(id_alta)]}? [S/N]: ").lower() == "s":
                 data[str(id_alta)]["estado"] = True
-                with open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8") as f:
-                    json.dump(data, f, indent=4, ensure_ascii=False)
-                    f.close()
-                    break
+                f=open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8")
+                json.dump(data, f, indent=4, ensure_ascii=False)
+                f.close()
+                break
             else:
                 print(f"No se activó {data[str(id_alta)]}")
+
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
     except FileNotFoundError:
@@ -230,85 +244,206 @@ def modificar(nombre_diccionario):
     Permite modificar un campo específico de un elemento en un archivo JSON, basado en su ID.
     """
     try:
-        f = open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8")
+        # Abro el archivo JSON
+        f =open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8")
         data = json.load(f)
         f.close()
 
+
         while True:
-            # Solicita el ID del objeto a modificar y el campo a modificar.
+            # Modifica un campo específico del elemento en el archivo JSON
             id_modificar = int(input(f"Ingrese el id del {nombre_diccionario} a modificar: "))
             if str(id_modificar) not in str(data):
                 print("ID no encontrado, intente de nuevo")
                 continue
             campo = input(f"Ingrese el campo a modificar: {list(data[str(id_modificar)].keys())} - ")
-            # Modifica el campo y actualiza el archivo JSON.
+            # Verifica si el campo ingresado es válido
             if campo in data[str(id_modificar)]:
                 data[str(id_modificar)][campo] = input("Ingrese el nuevo valor: ")
                 print(f"Objeto modificado: {data[str(id_modificar)]}")
+                break
             else:
                 print("Campo inválido, intente de nuevo")
-            with open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4, ensure_ascii=False)
-                f.close()
-            break
+            # Actualizo el archivo JSON
+            f=open(f"jsons/{nombre_diccionario}_json",mode="w", encoding="utf-8")
+            json.dump(data,f,ensure_ascii=False, indent=4)
+            f.close()
+            
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
     except FileNotFoundError:
-        print(f"Archivo no encontrado.")
+        print(f"Archivo JSON no encontrado.")
     except json.JSONDecodeError:
-        print(f"Error al decodificar el archivo.")
+        print(f"Error al decodificar el archivo JSON.")
 
-
-def buscar(a):
+def buscar(nombre_diccionario):
     """
-    Busca e imprime un elemento de un diccionario por su ID, verificando su estado.
-    """
-    # Solicita el ID a buscar y muestra el resultado.
-    print_dict(a)
-    id_buscar = input("Ingrese ID a buscar: ")
-    print(f"Su búsqueda devolvió:\n{a.get(id_buscar)}")
-
-
-def agregar(nombre_diccionario):
-    """
-    Agrega un nuevo elemento a un archivo JSON, inicializando sus campos y asignando 'estado=True'.
+    Busca e imprime un elemento de un diccionario por su Key, verificando su estado.
     """
     try:
-        f = open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8")
-        data = json.load(f)
-        f.close()
-        # Solicita los datos del nuevo elemento y los agrega al archivo JSON.
+        #  Abro el archivo JSON
         while True:
-            id_agregar = str(len(data) + 1)
-            data[id_agregar] = {}
-            data[id_agregar]["estado"] = True
-            print(f"Datos actuales: {data[id_agregar]}")
-            # Solicita los datos del nuevo elemento.
-            campo = input(f"Ingrese campo nuevo o 'salir': ").strip().lower()
-            if campo == "salir":
-                with open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8") as f:
-                    json.dump(data, f, indent=4, ensure_ascii=False)
-                    f.close()
-                    break
-            valor = input(f"Valor para {campo}: ").strip()
-            data[id_agregar][campo] = valor
+            f=open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8")
+            a=json.load(f)
+            f.close()
+            
+            # Busca e imprime un elemento del diccionario por su Key
+            id_buscar = str(input(f"Ingrese el id del {nombre_diccionario} a buscar: "))
+            if id_buscar not in a:
+                print("ID no encontrado, intente de nuevo")
+                continue
+            else:
+                if a[id_buscar]["estado"]:
+                    print(f"{id_buscar}: {', '.join([f'{key.capitalize()}: {value}' for key, value in a[id_buscar].items()])}")
+                else:
+                    print(f"{id_buscar} no está activo (estado: False)")
+                if input("¿Quiere buscar de nuevo? (s/n): ").lower() != "s":
+                    return False
+                
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
     except FileNotFoundError:
-        print(f"Archivo no encontrado.")
+        print(f"Archivo JSON no encontrado.")
     except json.JSONDecodeError:
-        print(f"Error al decodificar el archivo.")
+        print(f"Error al decodificar el archivo JSON.")
+
+
+def agregar_alumnos():
+    """
+    Agrega un nuevo elemento a alumnos_json, inicializando sus campos y asignando 'estado=True' y sus constantes respectivamente.
+    """
+
+    try:
+        f=open(f"jsons/alumnos_json", mode="r", encoding="utf-8")
+        a=json.load(f)
+        f.close()
+        lista_claves = ["nombre", "apellido", "curso_id" , "telefono", ]
+        nuevo_a={}
+        for i in lista_claves:
+            if  i == "gmail" or i=="estado":
+                nuevo_a[i] = ""
+            else:
+                nuevo_a[i] = input(f"Ingrese el nuevo {i}: ")
+        nuevo_a["estado"] = True
+        a[len(a)] = nuevo_a
+
+        f=open(f"jsons/alumnos_json", mode="w", encoding="utf-8")
+        json.dump(a,f,indent=4, ensure_ascii=False)
+        f.close()
+
+    except ValueError:
+        print("Valor ingresado no válido, intente de nuevo")
+    except FileNotFoundError:
+        print(f"Archivo JSON no encontrado.")
+    except json.JSONDecodeError:
+        print(f"Error al decodificar el archivo JSON.")
+
+def agregar_profesores():
+    """
+    Agrega un nuevo elemento a profesores_json, inicializando sus campos y asignando 'estado=True' y sus constantes respectivamente.
+    """
+
+    try:
+        f=open(f"jsons/profesores_json", mode="r", encoding="utf-8")
+        a=json.load(f)
+        f.close()
+
+        lista_claves = ["nombre", "apellido" , "telefono" ]
+        nuevo_a={}
+        for i in lista_claves:
+            if  i == "gmail" or i=="estado" or i=="materias":
+                nuevo_a[i] = ""
+            else:
+                nuevo_a[i] = input(f"Ingrese el nuevo {i}: ")
+
+        nuevo_a["estado"] = True
+        nuevo_a["materias"] = [x for x in input("Ingrese las materias que dicta separadas por coma: ").split(",")]
+        a[len(a)] = nuevo_a
+
+        f=open(f"jsons/profesores_json", mode="w", encoding="utf-8")
+        json.dump(a,f,indent=4, ensure_ascii=False)
+        f.close()
+
+    except ValueError:
+        print("Valor ingresado no válido, intente de nuevo")
+    except FileNotFoundError:
+        print(f"Archivo JSON no encontrado.")
+    except json.JSONDecodeError:
+        print(f"Error al decodificar el archivo JSON.")
+
+def agregar_materias():
+    """
+    Agrega un nuevo elemento a materias_json, inicializando sus campos y asignando 'estado=True' y sus constantes respectivamente.
+    """
+    try:
+        f=open(f"jsons/materias_json", mode="r", encoding="utf-8")
+        a=json.load(f)
+        f.close()
+        lista_claves = ["materia_nombre", "curso"  ]
+        nuevo_a={}
+        for i in lista_claves:
+            if  i == "gmail" or i=="estado" or i=="profesor":
+                nuevo_a[i] = ""
+            else:
+                nuevo_a[i] = input(f"Ingrese el nuevo {i}: ")
+        nuevo_a["estado"] = True
+        nuevo_a["profesor"] = []
+        a[len(a)] = nuevo_a
+
+        f=open(f"jsons/materias_json", mode="w", encoding="utf-8")
+        json.dump(a,f,indent=4, ensure_ascii=False)
+        f.close()
+
+    except ValueError:
+        print("Valor ingresado no válido, intente de nuevo")
+    except FileNotFoundError:
+        print(f"Archivo JSON no encontrado.")
+    except json.JSONDecodeError:
+        print(f"Error al decodificar el archivo JSON.")
+
+def agregar_cursos():
+    """
+    Agrega un nuevo elemento a cursos_json, inicializando sus campos y asignando 'estado=True' y sus constantes respectivamente.
+    """
+    try:
+        f=open(f"jsons/cursos_json", mode="r", encoding="utf-8")
+        a=json.load(f)
+        f.close()
+        lista_claves = ["curso_nombre" ]
+        nuevo_a={}
+        for i in lista_claves:
+            if  i == "materias" or i=="estado" or i=="alumnos":
+                nuevo_a[i] = ""
+            else:
+                nuevo_a[i] = input(f"Ingrese el nuevo {i}: ")
+        nuevo_a["estado"] = True
+        nuevo_a["materias"] = []
+        a[len(a)] = nuevo_a
+
+        f=open(f"jsons/cursos_json", mode="w", encoding="utf-8")
+        json.dump(a,f,indent=4, ensure_ascii=False)
+        f.close()
+
+    except ValueError:
+        print("Valor ingresado no válido, intente de nuevo")
+    except FileNotFoundError:
+        print(f"Archivo JSON no encontrado.")
+    except json.JSONDecodeError:
+        print(f"Error al decodificar el archivo JSON.")
 
 
 def repetir(a):
     """
     Pregunta al usuario si desea realizar otra acción; finaliza el programa si la respuesta es negativa.
     """
-    respuesta = input("Desea realizar otra acción? [S/N]: ").lower()
-    if respuesta != "s":
-        salir()
-    else:
-        men_2(a)
+    while True:
+        respuesta = input("¿Desea realizar otra acción? [S/N]: ").lower()
+        if respuesta == "n":
+            salir()
+        elif respuesta == "s":
+            break
+        else:
+            print("Opción no válida, intente de nuevo.")
 
 
 def generar_gmail(nombre_diccionario):
@@ -316,34 +451,45 @@ def generar_gmail(nombre_diccionario):
     Genera correos electrónicos para todos los elementos de un archivo JSON, basándose en sus nombres y apellidos.
     """
     try:
-        f = open(f"jsons/{nombre_diccionario}_json", mode="r", encoding="utf-8")
+        # Abro el archivo JSON
+        f = open(f"jsons/{nombre_diccionario}_json", mode="r",encoding="utf-8")
         data = json.load(f)
         f.close()
-        # Itera sobre los elementos del archivo JSON y genera un correo para cada uno.
+        
+        # Genero correos electrónicos para todos los elementos del archivo JSON
+        if data == "profesores": 
+            dominio = "@profe.edu.ar" 
+        else:
+            dominio = "@edu.ar"
+
         for i in data:
-            if data[i]["estado"]:
-                nombre = data[i]["nombre"].replace(" ", "").lower()
-                apellido = data[i]["apellido"].replace(" ", "").lower()
-                data[i]["correo"] = f"{nombre}{apellido}@gmail.com"
-        with open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8") as f:
-            json.dump(data, f, indent=4, ensure_ascii=False)
-            f.close()
+            nombre = data[i]["nombre"]
+            apellido = data[i]["apellido"]
+            inicial = nombre[0]
+            correo = f"{inicial.upper()}{apellido.lower()}{dominio}"
+            data[i]["gmail"] = correo
+
+        # Actualizo el archivo JSON
+        f = open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8")
+        json.dump(data,f,indent=4, ensure_ascii=False)
+        f.close()
+        
     except ValueError:
         print("Valor ingresado no válido, intente de nuevo")
     except FileNotFoundError:
-        print(f"Archivo no encontrado.")
+        print(f"Archivo JSON no encontrado.")
     except json.JSONDecodeError:
-        print(f"Error al decodificar el archivo.")
+        print(f"Error al decodificar el archivo JSON.")
 
 def llamados_principales():
     """
-    Ejecuta las funciones principales del programa para realizar asignaciones iniciales y generar correos.
+    Ejecuta las funciones necesarias para inicializar los datos y asignaciones del programa.enera correos electrónicos para profesores y alumnos.
     """
     Asignacion()
     asignacion_2()
     asignacion_3()
-    generar_gmail("alumnos")
-    generar_gmail("profesores")
+    generar_gmail(obtener_nombre_diccionario(profesores))
+    generar_gmail(obtener_nombre_diccionario(alumnos))
 
 f=open("jsons/alumnos_json", mode="r", encoding="utf-8")
 alumnos=json.load(f)

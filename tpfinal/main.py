@@ -33,7 +33,18 @@ from funciones import *
 # CUERPO PRINCIPAL
 #----------------------------------------------------------------------------------------------
 def main():
-    """Función principal del programa"""
+    """
+    Punto de entrada principal del programa.
+
+    Funcionamiento:
+        - Inicializa las configuraciones principales y realiza las asignaciones necesarias mediante `llamados_principales`.
+        - Presenta un menú principal al usuario con opciones para gestionar diferentes entidades (alumnos, profesores, cursos y materias).
+        - Para cada entidad, muestra un submenú con acciones disponibles como agregar, eliminar, modificar, ver y buscar objetos.
+        - Incluye manejo de errores para entradas no válidas.
+    Excepciones:
+        - Maneja errores por entradas no válidas (ValueError).
+        - Captura errores inesperados (Exception) y notifica al usuario.
+    """
     try:
         llamados_principales()
         while True:
@@ -53,7 +64,7 @@ def main():
                     men_2(obtener_nombre_diccionario(alumnos))
                     elec2 = input("Ingrese una opción: ")
                     if elec2 == "1":
-                        agregar(obtener_nombre_diccionario(alumnos))
+                        agregar_alumnos()
                         llamados_principales()
                     elif elec2 == "2":
                         eliminar(obtener_nombre_diccionario(alumnos))
@@ -65,7 +76,7 @@ def main():
                         if input("[1] Ver todos los alumnos o [2] Uno en particular: ") == "1":
                             print_dict(alumnos)
                         else:
-                            buscar(alumnos)
+                            buscar(obtener_nombre_diccionario(alumnos))
                     elif elec2 == "0":
                         break
                     else:
@@ -79,19 +90,19 @@ def main():
                     men_2(obtener_nombre_diccionario(profesores))
                     elec2 = input("Ingrese una opción: ")
                     if elec2 == "1":
-                        agregar(obtener_nombre_diccionario(profesores))
+                        agregar_profesores()
                         llamados_principales()
                     elif elec2 == "2":
                         eliminar( obtener_nombre_diccionario(profesores))
                     elif elec2 == "3":
                         alta(obtener_nombre_diccionario(profesores))
                     elif elec2 == "4":
-                        modificar(obtener_nombre_diccionario(alumnos))
+                        modificar(obtener_nombre_diccionario(profesores))
                     elif elec2 == "5":
                         if input("[1] Ver todos los profesores o [2] Uno en particular: ") == "1":
                             print_dict(profesores)
                         else:
-                            buscar(profesores)
+                            buscar(obtener_nombre_diccionario(profesores))
                     elif elec2 == "0":
                         break
                     else:
@@ -105,7 +116,7 @@ def main():
                     men_2(obtener_nombre_diccionario(cursos))
                     elec2 = input("Ingrese una opción: ")
                     if elec2 == "1":
-                        agregar(obtener_nombre_diccionario(cursos))
+                        agregar_cursos()
                         llamados_principales()
                     elif elec2 == "2":
                         eliminar(obtener_nombre_diccionario(cursos))
@@ -117,7 +128,7 @@ def main():
                         if input("[1] Ver todos los cursos o [2] Uno en particular: ") == "1":
                             print_dict(cursos)
                         else:
-                            buscar(cursos)
+                            buscar(obtener_nombre_diccionario(cursos))
                     elif elec2 == "0":
                         break
                     else:
@@ -131,7 +142,7 @@ def main():
                     men_2(obtener_nombre_diccionario(materias))
                     elec2 = input("Ingrese una opción: ")
                     if elec2 == "1":
-                        agregar(obtener_nombre_diccionario(materias))
+                        agregar_materias()
                         llamados_principales()
                     elif elec2 == "2":
                         eliminar(obtener_nombre_diccionario(materias))
@@ -143,7 +154,7 @@ def main():
                         if input("[1] Ver todas las materias o [2] Una en particular: ") == "1":
                             print_dict(materias)
                         else:
-                            buscar(materias)
+                            buscar(obtener_nombre_diccionario(materias))
                     elif elec2 == "0":
                         break
                     else:
@@ -160,5 +171,9 @@ def main():
         print("Error: Entrada no válida, intente nuevamente.")
     except Exception as e:
         print(f"Ocurrió un error inesperado: {e}. Por favor, reinicie el programa.")
+    except FileNotFoundError:
+        print(f"Archivo JSON no encontrado.")
+    except json.JSONDecodeError:
+        print(f"Error al decodificar el archivo JSON.")
 # Punto de entrada al programa---
 main()

@@ -43,7 +43,8 @@
             "Educación Física III",
             "Inglés III",
             "Tecnología III",
-            "Arte III"
+            "Arte III",
+            "algebra"
         ],
         "alumnos": 5,
         "estado": true
@@ -61,9 +62,10 @@
             "Educación Física IV",
             "Inglés IV",
             "Tecnología IV",
-            "Arte IV"
+            "Arte IV",
+            "algebra"
         ],
-        "alumnos": 5,
+        "alumnos": 6,
         "estado": true
     },
     "4": {
@@ -82,5 +84,16 @@
         ],
         "alumnos": 5,
         "estado": true
+    },
+    "5": {
+        "curso_nombre": "sexto a",
+        "estado": false,
+        "alumnos": 0
+    },
+    "6": {
+        "curso_nombre": "sexto a",
+        "estado": true,
+        "materias": [],
+        "alumnos": 0
     }
 }
