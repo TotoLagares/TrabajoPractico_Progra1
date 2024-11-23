@@ -243,8 +243,8 @@
         "nombre": "santiago",
         "apellido": "lagares",
         "curso_id": "5",
-        "gmail": "",
-        "telefono": "1234441",
+        "gmail": "Slagares@edu.ar",
+        "telefono": "1234444",
         "estado": true
     }
 }

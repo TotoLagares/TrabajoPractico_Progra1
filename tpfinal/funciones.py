@@ -93,7 +93,7 @@ def asignacion_2():
     for i in materias:
         for j in profesores:
             if int(i) in profesores[j]["materias"]:
-                if len(materias[i]["profesor"]) == 0:
+                if profesores[j]["nombre"]+" "+profesores[j]["apellido"] not in materias[i]["profesor"]:
                     materias[i]["profesor"].append(profesores[j]["nombre"]+" "+profesores[j]["apellido"])
     
     f=open("jsons/materias_json", mode="w", encoding="utf-8")
@@ -126,7 +126,8 @@ def asignacion_3():
     for i in materias:
         for j in cursos:
             if str(materias[i]["curso"]) == j:
-                cursos[j]["materias"].append(materias[i]["materia_nombre"])
+                if materias[i]["materia_nombre"] not in cursos[j]["materias"]:
+                    cursos[j]["materias"].append(materias[i]["materia_nombre"])
 
     f=open("jsons/cursos_json", mode="w", encoding="utf-8")
     json.dump(cursos, f, indent=4, ensure_ascii=False)
@@ -347,8 +348,8 @@ def agregar(nombre_diccionario):
                 nuevo_a[i] = input(f"Ingrese el nuevo {i}: ")
         nuevo_a["estado"] = True
         a[len(a)] = nuevo_a
-        llamados_principales()
-        
+
+
         f=open(f"jsons/{nombre_diccionario}_json", mode="w", encoding="utf-8")
         json.dump(a,f, indent=4, ensure_ascii=False)
         f.close()
@@ -391,7 +392,7 @@ def generar_gmail(nombre_diccionario):
 #         - Asigna un dominio específico según la entidad (profesores o alumnos).
 #         - Construye el correo concatenando la inicial del nombre y el apellido en minúsculas.
 #     """
-
+    
     f = open(f"jsons/{nombre_diccionario}_json", mode="r",encoding="utf-8")
     data = json.load(f)
     f.close()
@@ -425,8 +426,8 @@ def llamados_principales():
     Asignacion()
     asignacion_2()
     asignacion_3()
-    generar_gmail(alumnos)
-    generar_gmail(profesores)
+    generar_gmail(obtener_nombre_diccionario(profesores))
+    generar_gmail(obtener_nombre_diccionario(alumnos))
 
 f=open("jsons/alumnos_json", mode="r", encoding="utf-8")
 alumnos=json.load(f)

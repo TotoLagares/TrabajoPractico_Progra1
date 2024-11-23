@@ -61,16 +61,17 @@ def main():
             # Gestión de Alumnos
             elif opcion_elec == "1":
                 while True:
-                    men_2(alumnos)
+                    men_2(obtener_nombre_diccionario(alumnos))
                     elec2 = input("Ingrese una opción: ")
                     if elec2 == "1":
-                        agregar(alumnos)
+                        agregar(obtener_nombre_diccionario(alumnos))
+                        llamados_principales()
                     elif elec2 == "2":
-                        eliminar(alumnos)
+                        eliminar(obtener_nombre_diccionario(alumnos))
                     elif elec2 == "3":
-                        alta(alumnos)
+                        alta(obtener_nombre_diccionario(alumnos))
                     elif elec2 == "4":
-                        modificar(alumnos)
+                        modificar(obtener_nombre_diccionario(alumnos))
                     elif elec2 == "5":
                         if input("[1] Ver todos los alumnos o [2] Uno en particular: ") == "1":
                             print_dict(alumnos)
@@ -86,16 +87,17 @@ def main():
             # Gestión de Profesores
             elif opcion_elec == "2":
                 while True:
-                    men_2(profesores)
+                    men_2(obtener_nombre_diccionario(profesores))
                     elec2 = input("Ingrese una opción: ")
                     if elec2 == "1":
-                        agregar(profesores)
+                        agregar(obtener_nombre_diccionario(profesores))
+                        llamados_principales()
                     elif elec2 == "2":
-                        eliminar( profesores)
+                        eliminar( obtener_nombre_diccionario(profesores))
                     elif elec2 == "3":
-                        alta(profesores)
+                        alta(obtener_nombre_diccionario(profesores))
                     elif elec2 == "4":
-                        modificar(profesores)
+                        modificar(obtener_nombre_diccionario(alumnos))
                     elif elec2 == "5":
                         if input("[1] Ver todos los profesores o [2] Uno en particular: ") == "1":
                             print_dict(profesores)
@@ -111,16 +113,17 @@ def main():
             # Gestión de Cursos
             elif opcion_elec == "3":
                 while True:
-                    men_2(cursos)
+                    men_2(obtener_nombre_diccionario(cursos))
                     elec2 = input("Ingrese una opción: ")
                     if elec2 == "1":
-                        agregar(cursos)
+                        agregar(obtener_nombre_diccionario(cursos))
+                        llamados_principales()
                     elif elec2 == "2":
-                        eliminar(cursos)
+                        eliminar(obtener_nombre_diccionario(cursos))
                     elif elec2 == "3":
-                        alta(cursos)
+                        alta(obtener_nombre_diccionario(cursos))
                     elif elec2 == "4":
-                        modificar(cursos)
+                        modificar(obtener_nombre_diccionario(cursos))
                     elif elec2 == "5":
                         if input("[1] Ver todos los cursos o [2] Uno en particular: ") == "1":
                             print_dict(cursos)
@@ -136,16 +139,17 @@ def main():
             # Gestión de Materias
             elif opcion_elec == "4":
                 while True:
-                    men_2(materias)
+                    men_2(obtener_nombre_diccionario(materias))
                     elec2 = input("Ingrese una opción: ")
                     if elec2 == "1":
-                        agregar(materias)
+                        agregar(obtener_nombre_diccionario(materias))
+                        llamados_principales()
                     elif elec2 == "2":
-                        eliminar(materias)
+                        eliminar(obtener_nombre_diccionario(materias))
                     elif elec2 == "3":
-                        alta(materias)
+                        alta(obtener_nombre_diccionario(materias))
                     elif elec2 == "4":
-                        modificar(materias)
+                        modificar(obtener_nombre_diccionario(materias))
                     elif elec2 == "5":
                         if input("[1] Ver todas las materias o [2] Una en particular: ") == "1":
                             print_dict(materias)

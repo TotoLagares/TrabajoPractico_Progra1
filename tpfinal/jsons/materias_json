@@ -314,7 +314,8 @@
     "41": {
         "materia_nombre": "Matemática V",
         "profesor": [
-            "Diego Torres"
+            "Diego Torres",
+            "Gabriel Ponce"
         ],
         "curso": 4,
         "estado": true
@@ -322,7 +323,8 @@
     "42": {
         "materia_nombre": "Historia IV",
         "profesor": [
-            "Valentina Hernández"
+            "Valentina Hernández",
+            "Gabriel Ponce"
         ],
         "curso": 4,
         "estado": true
