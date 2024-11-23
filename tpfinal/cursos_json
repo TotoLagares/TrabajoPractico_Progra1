@@ -1,0 +1,32 @@
+{
+    "0": {
+        "curso_nombre": "Primer Año",
+        "materias": [],
+        "alumnos": 0,
+        "estado": true
+    },
+    "1": {
+        "curso_nombre": "Segundo Año",
+        "materias": [],
+        "alumnos": 0,
+        "estado": true
+    },
+    "2": {
+        "curso_nombre": "Tercer Año",
+        "materias": [],
+        "alumnos": 0,
+        "estado": true
+    },
+    "3": {
+        "curso_nombre": "Cuarto Año",
+        "materias": [],
+        "alumnos": 0,
+        "estado": true
+    },
+    "4": {
+        "curso_nombre": "Quinto Año",
+        "materias": [],
+        "alumnos": 0,
+        "estado": true
+    }
+}

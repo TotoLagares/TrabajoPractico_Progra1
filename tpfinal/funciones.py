@@ -372,7 +372,10 @@ def generar_gmail(nombre_diccionario):
     f = open(f"jsons/{nombre_diccionario}_json", mode="r",encoding="utf-8")
     data = json.load(f)
     f.close()
-    dominio = "@profe.edu.ar" if str(data) == "profesores" else "@edu.ar"
+    if str(data) == "profesores": 
+        dominio = "@profe.edu.ar" 
+    else:
+        dominio = "@edu.ar"
     for i in str(data):
         inicial = ""
         apellido = ""

@@ -1,0 +1,242 @@
+{
+    "0": {
+        "nombre": "Sofía",
+        "apellido": "González",
+        "curso_id": 0,
+        "gmail": "",
+        "telefono": "+54 11 12345678",
+        "estado": true
+    },
+    "1": {
+        "nombre": "Lucas",
+        "apellido": "López",
+        "curso_id": 0,
+        "gmail": "",
+        "telefono": "+54 11 23456789",
+        "estado": true
+    },
+    "2": {
+        "nombre": "Martín",
+        "apellido": "Pérez",
+        "curso_id": 1,
+        "gmail": "",
+        "telefono": "+54 11 34567890",
+        "estado": true
+    },
+    "3": {
+        "nombre": "Ana",
+        "apellido": "Martínez",
+        "curso_id": 1,
+        "gmail": "",
+        "telefono": "+54 11 45678901",
+        "estado": true
+    },
+    "4": {
+        "nombre": "Valentina",
+        "apellido": "Ramírez",
+        "curso_id": 2,
+        "gmail": "",
+        "telefono": "+54 11 56789012",
+        "estado": true
+    },
+    "5": {
+        "nombre": "Diego",
+        "apellido": "Hernández",
+        "curso_id": 2,
+        "gmail": "",
+        "telefono": "+54 11 67890123",
+        "estado": true
+    },
+    "6": {
+        "nombre": "Camila",
+        "apellido": "Torres",
+        "curso_id": 3,
+        "gmail": "",
+        "telefono": "+54 11 78901234",
+        "estado": true
+    },
+    "7": {
+        "nombre": "Javier",
+        "apellido": "Sánchez",
+        "curso_id": 3,
+        "gmail": "",
+        "telefono": "+54 11 89012345",
+        "estado": true
+    },
+    "8": {
+        "nombre": "Laura",
+        "apellido": "Molina",
+        "curso_id": 4,
+        "gmail": "",
+        "telefono": "+54 11 90123456",
+        "estado": true
+    },
+    "9": {
+        "nombre": "Felipe",
+        "apellido": "Cruz",
+        "curso_id": 4,
+        "gmail": "",
+        "telefono": "+54 11 01234567",
+        "estado": true
+    },
+    "10": {
+        "nombre": "Nicolás",
+        "apellido": "Jiménez",
+        "curso_id": 0,
+        "gmail": "",
+        "telefono": "+54 11 12345678",
+        "estado": true
+    },
+    "11": {
+        "nombre": "Lucía",
+        "apellido": "Salazar",
+        "curso_id": 0,
+        "gmail": "",
+        "telefono": "+54 11 23456789",
+        "estado": true
+    },
+    "12": {
+        "nombre": "Andrés",
+        "apellido": "Morales",
+        "curso_id": 1,
+        "gmail": "",
+        "telefono": "+54 11 34567890",
+        "estado": true
+    },
+    "13": {
+        "nombre": "Isabella",
+        "apellido": "Vargas",
+        "curso_id": 1,
+        "gmail": "",
+        "telefono": "+54 11 45678901",
+        "estado": true
+    },
+    "14": {
+        "nombre": "Gabriel",
+        "apellido": "Aguilar",
+        "curso_id": 2,
+        "gmail": "",
+        "telefono": "+54 11 56789012",
+        "estado": true
+    },
+    "15": {
+        "nombre": "Renata",
+        "apellido": "Ponce",
+        "curso_id": 2,
+        "gmail": "",
+        "telefono": "+54 11 67890123",
+        "estado": true
+    },
+    "16": {
+        "nombre": "Esteban",
+        "apellido": "Salas",
+        "curso_id": 3,
+        "gmail": "",
+        "telefono": "+54 11 78901234",
+        "estado": true
+    },
+    "17": {
+        "nombre": "Samantha",
+        "apellido": "Mendoza",
+        "curso_id": 3,
+        "gmail": "",
+        "telefono": "+54 11 89012345",
+        "estado": true
+    },
+    "18": {
+        "nombre": "Hugo",
+        "apellido": "Córdoba",
+        "curso_id": 4,
+        "gmail": "",
+        "telefono": "+54 11 90123456",
+        "estado": true
+    },
+    "19": {
+        "nombre": "Valeria",
+        "apellido": "Ríos",
+        "curso_id": 4,
+        "gmail": "",
+        "telefono": "+54 11 01234567",
+        "estado": true
+    },
+    "20": {
+        "nombre": "Joaquín",
+        "apellido": "Alvarado",
+        "curso_id": 0,
+        "gmail": "",
+        "telefono": "+54 11 12345678",
+        "estado": true
+    },
+    "21": {
+        "nombre": "Martina",
+        "apellido": "Benítez",
+        "curso_id": 0,
+        "gmail": "",
+        "telefono": "+54 11 23456789",
+        "estado": true
+    },
+    "22": {
+        "nombre": "Natalia",
+        "apellido": "Rincón",
+        "curso_id": 1,
+        "gmail": "",
+        "telefono": "+54 11 34567890",
+        "estado": true
+    },
+    "23": {
+        "nombre": "Camilo",
+        "apellido": "Alvarado",
+        "curso_id": 1,
+        "gmail": "",
+        "telefono": "+54 11 45678901",
+        "estado": true
+    },
+    "24": {
+        "nombre": "Ángela",
+        "apellido": "Paz",
+        "curso_id": 0,
+        "gmail": "",
+        "telefono": "+54 11 56789012",
+        "estado": true
+    },
+    "25": {
+        "nombre": "Sebastián",
+        "apellido": "Hernández",
+        "curso_id": 1,
+        "gmail": "",
+        "telefono": "+54 11 67890123",
+        "estado": true
+    },
+    "26": {
+        "nombre": "Lucía",
+        "apellido": "Salas",
+        "curso_id": 2,
+        "gmail": "",
+        "telefono": "+54 11 78901234",
+        "estado": true
+    },
+    "27": {
+        "nombre": "Ricardo",
+        "apellido": "Torres",
+        "curso_id": 3,
+        "gmail": "",
+        "telefono": "+54 11 89012345",
+        "estado": true
+    },
+    "28": {
+        "nombre": "Fernanda",
+        "apellido": "Cruz",
+        "curso_id": 4,
+        "gmail": "",
+        "telefono": "+54 11 90123456",
+        "estado": true
+    },
+    "29": {
+        "nombre": "Diego",
+        "apellido": "Jiménez",
+        "curso_id": 0,
+        "gmail": "",
+        "telefono": "+54 11 01234567",
+        "estado": true
+    }
+}
