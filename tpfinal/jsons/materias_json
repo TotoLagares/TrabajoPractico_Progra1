@@ -1,0 +1,296 @@
+{
+    "1": {
+        "materia_nombre": "Lengua y Literatura I",
+        "profesor": [],
+        "curso": 0,
+        "estado": false
+    },
+    "2": {
+        "materia_nombre": "Matemática I",
+        "profesor": [],
+        "curso": 0,
+        "estado": false
+    },
+    "3": {
+        "materia_nombre": "Ciencias Sociales I",
+        "profesor": [],
+        "curso": 0,
+        "estado": true
+    },
+    "4": {
+        "materia_nombre": "Ciencias Naturales I",
+        "profesor": [],
+        "curso": 0,
+        "estado": true
+    },
+    "5": {
+        "materia_nombre": "Educación Física I",
+        "profesor": [],
+        "curso": 0,
+        "estado": true
+    },
+    "6": {
+        "materia_nombre": "Inglés I",
+        "profesor": [],
+        "curso": 0,
+        "estado": true
+    },
+    "7": {
+        "materia_nombre": "Tecnología I",
+        "profesor": [],
+        "curso": 0,
+        "estado": true
+    },
+    "8": {
+        "materia_nombre": "Arte I",
+        "profesor": [],
+        "curso": 0,
+        "estado": true
+    },
+    "9": {
+        "materia_nombre": "Lengua y Literatura II",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "10": {
+        "materia_nombre": "Matemática II",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "11": {
+        "materia_nombre": "Historia I",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "12": {
+        "materia_nombre": "Geografía I",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "13": {
+        "materia_nombre": "Biología I",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "14": {
+        "materia_nombre": "Química I",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "15": {
+        "materia_nombre": "Educación Física II",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "16": {
+        "materia_nombre": "Inglés II",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "17": {
+        "materia_nombre": "Tecnología II",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "18": {
+        "materia_nombre": "Arte II",
+        "profesor": [],
+        "curso": 1,
+        "estado": true
+    },
+    "19": {
+        "materia_nombre": "Lengua y Literatura III",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "20": {
+        "materia_nombre": "Matemática III",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "21": {
+        "materia_nombre": "Historia II",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "22": {
+        "materia_nombre": "Geografía II",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "23": {
+        "materia_nombre": "Física I",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "24": {
+        "materia_nombre": "Química II",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "25": {
+        "materia_nombre": "Educación Física III",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "26": {
+        "materia_nombre": "Inglés III",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "27": {
+        "materia_nombre": "Tecnología III",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "28": {
+        "materia_nombre": "Arte III",
+        "profesor": [],
+        "curso": 2,
+        "estado": true
+    },
+    "29": {
+        "materia_nombre": "Lengua y Literatura IV",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "30": {
+        "materia_nombre": "Matemática IV",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "31": {
+        "materia_nombre": "Historia III",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "32": {
+        "materia_nombre": "Geografía III",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "33": {
+        "materia_nombre": "Biología II",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "34": {
+        "materia_nombre": "Física II",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "35": {
+        "materia_nombre": "Química III",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "36": {
+        "materia_nombre": "Educación Física IV",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "37": {
+        "materia_nombre": "Inglés IV",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "38": {
+        "materia_nombre": "Tecnología IV",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "39": {
+        "materia_nombre": "Arte IV",
+        "profesor": [],
+        "curso": 3,
+        "estado": true
+    },
+    "40": {
+        "materia_nombre": "Lengua y Literatura V",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "41": {
+        "materia_nombre": "Matemática V",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "42": {
+        "materia_nombre": "Historia IV",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "43": {
+        "materia_nombre": "Geografía IV",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "44": {
+        "materia_nombre": "Ciencias Naturales I",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "45": {
+        "materia_nombre": "Orientación Vocacional I",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "46": {
+        "materia_nombre": "Inglés V",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "47": {
+        "materia_nombre": "Educación Física V",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "48": {
+        "materia_nombre": "Tecnología V",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    },
+    "49": {
+        "materia_nombre": "Arte V",
+        "profesor": [],
+        "curso": 4,
+        "estado": true
+    }
+}

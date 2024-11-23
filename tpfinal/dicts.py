@@ -1,4 +1,5 @@
 import json
+
 alumnos = {
     0: {'nombre': 'Sofía', 'apellido': 'González', 'curso_id': 0, 'gmail': '', 'telefono': '+54 11 12345678', 'estado': True},
     1: {'nombre': 'Lucas', 'apellido': 'López', 'curso_id': 0, 'gmail': '', 'telefono': '+54 11 23456789', 'estado': True},
@@ -50,8 +51,6 @@ profesores = {
     13: {"nombre": "Camila", "apellido": "Ríos", "materias": [39, 40, 47], "telefono": "+54 11 45678901", "gmail": "", "estado": True},
     14: {"nombre": "Gabriel", "apellido": "Ponce", "materias": [41, 42, 48], "telefono": "+54 11 56789012", "gmail": "", "estado": True}
 }
-
-
 cursos={
     0: {"curso_nombre": "Primer Año", "materias": [], "alumnos": 0, "estado": True},
     1: { "curso_nombre": "Segundo Año", "materias": [], "alumnos": 0, "estado": True},
@@ -111,6 +110,19 @@ materias= {
     49: {"materia_nombre": "Arte V", "profesor": [], "curso": 4, "estado": True},
 }
 
-f = open("archivos_json", mode="w", encoding="utf-8")
+f = open("alumnos_json", mode="w", encoding="utf-8")
 json.dump(alumnos, f, ensure_ascii=False, indent=4)
 f.close()
+
+f = open("profesores_json", mode="w", encoding="utf-8")
+json.dump(profesores, f, ensure_ascii=False, indent=4)
+f.close()
+
+f = open("cursos_json", mode="w", encoding="utf-8")
+json.dump(cursos, f, ensure_ascii=False, indent=4)
+f.close()
+
+f = open("materias_json", mode="w", encoding="utf-8")
+json.dump(materias, f, ensure_ascii=False, indent=4)
+f.close()
+
